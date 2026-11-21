@@ -1,0 +1,21 @@
+exp_id,fecha,descripcion,qwk_cv_mean,qwk_cv_std,decision
+EXP-001,2026-11-18,EXP-001 nombre generico,0.3805,0.0104,"descartar (delta -0.0028, mejora en 0/5, sube el desvio)"
+EXP-002,2026-11-18,EXP-002 folds agrupados,0.3083,0.029,"sin decision (cambia la medicion, no el modelo)"
+EXP-003,2026-11-18,EXP-003 sin nombre,0.3832,0.0059,"descartar (delta -0.0002, mejora en 1/5)"
+EXP-005,2026-11-18,EXP-005 regresion redondeo,0.3105,0.0337,"descartar (delta -0.0729, mejora en 0/5, sube el desvio)"
+EXP-004,2026-11-18,EXP-004 rescuer count,0.3835,0.0223,"descartar (delta +0.0002, mejora en 3/5, sube el desvio)"
+EXP-006,2026-11-18,EXP-006 vision metadata,0.3681,0.0127,"descartar (delta -0.0153, mejora en 0/5, sube el desvio)"
+EXP-007,2026-11-18,EXP-007 sentiment oraciones,0.3807,0.0136,"descartar (delta -0.0027, mejora en 2/5, sube el desvio)"
+EXP-008,2026-11-18,EXP-008 img svd,0.3875,0.0061,"aceptar (delta +0.0041, mejora en 4/5)"
+EXP-009,2026-11-18,EXP-009 umbrales cuantiles,0.4248,0.0261,sospechar y frenar (delta +0.1143 > 0.02)
+EXP-012,2026-11-18,EXP-012 sentiment documento,0.374,0.0207,"descartar (delta -0.0093, mejora en 2/5, sube el desvio)"
+EXP-011,2026-11-18,EXP-011 vision extendido,0.3751,0.0158,"descartar (delta +0.0070, mejora en 4/5, sube el desvio)"
+EXP-013,2026-11-18,EXP-013 img svd 10,0.3856,0.0145,"descartar (delta +0.0022, mejora en 3/5, sube el desvio)"
+EXP-014,2026-11-18,EXP-014 img svd 50,0.3708,0.0154,"descartar (delta -0.0126, mejora en 0/5, sube el desvio)"
+EXP-015,2026-11-18,EXP-015 nombre generico baby,0.3836,0.0099,"descartar (delta +0.0031, mejora en 1/5)"
+EXP-010,2026-11-18,EXP-010 umbrales optimizado,0.3999,0.0842,sospechar y frenar (delta +0.0894 > 0.02)
+EXP-017,2026-11-19,EXP-017 svd cuantiles,0.4341,0.0139,sospechar y frenar (delta +0.0508 > 0.02)
+EXP-018,2026-11-19,EXP-018 svd cuantiles grupos,0.3662,0.0151,sospechar y frenar (delta +0.0579 > 0.02)
+EXP-016,2026-11-19,EXP-016 seeds,,,sin decision (mide el ruido de la particion): ver salida/resultado.txt
+EXP-017,2026-11-20,EXP-017 svd cuantiles,0.432,0.0244,sospechar y frenar (delta +0.0479 > 0.02)
+EXP-018,2026-11-20,EXP-018 svd cuantiles grupos,0.3771,0.016,sospechar y frenar (delta +0.0465 > 0.02)

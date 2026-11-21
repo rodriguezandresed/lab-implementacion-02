@@ -1,0 +1,17 @@
+baseline  exp_015   delta
+fold_0    0.3805   0.3805  0.0000
+fold_1    0.3742   0.3742  0.0000
+fold_2    0.3764   0.3764  0.0000
+fold_3    0.3984   0.3984  0.0000
+fold_4    0.3732   0.3885  0.0153
+media baseline 0.3805 desvio 0.0104
+media exp_015  0.3836 desvio 0.0099
+delta media    0.0031
+folds que mejoran: 1 de 5
+importancia (split) por fold de las columnas nuevas:
+        nombre_generico
+fold_0                0
+fold_1                0
+fold_2                0
+fold_3                0
+fold_4                1

@@ -1,0 +1,9 @@
+variante  baseline  cuantiles     svd  delta_svd  delta_cuantiles
+seed                                                             
+0           0.3747     0.4278  0.3916     0.0170           0.0531
+1           0.3767     0.4169  0.3827     0.0061           0.0402
+2           0.3830     0.4087  0.3954     0.0123           0.0257
+3           0.3789     0.4282  0.3894     0.0105           0.0493
+4           0.3601     0.4262  0.3871     0.0270           0.0660
+svd: delta media 0.0146 desvio entre seeds 0.0080 min 0.0061 max 0.0270; seeds que mejoran 5 de 5; folds que mejoran 24 de 25
+cuantiles: delta media 0.0469 desvio entre seeds 0.0151 min 0.0257 max 0.0660; seeds que mejoran 5 de 5; folds que mejoran 24 de 25

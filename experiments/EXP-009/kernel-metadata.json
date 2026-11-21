@@ -1,0 +1,18 @@
+{
+ "id": "rodriguezandresed/exp-009-umbrales-cuantiles",
+ "title": "EXP-009 umbrales cuantiles",
+ "code_file": "exp-009.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": false,
+ "dataset_sources": [],
+ "competition_sources": [
+  "petfinder-adoption-prediction"
+ ],
+ "kernel_sources": [
+  "rodriguezandresed/examen-lab-ii-preprocesado-texto",
+  "rodriguezandresed/examen-lab-ii-preprocesado-img"
+ ]
+}

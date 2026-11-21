@@ -1,0 +1,17 @@
+baseline  exp_007   delta
+fold_0    0.3805   0.3678 -0.0127
+fold_1    0.3742   0.3663 -0.0078
+fold_2    0.3764   0.3869  0.0105
+fold_3    0.3984   0.3985  0.0001
+fold_4    0.3874   0.3839 -0.0035
+media baseline 0.3834 desvio 0.0098
+media exp_007  0.3807 desvio 0.0136
+delta media    -0.0027
+folds que mejoran: 2 de 5
+importancia (split) por fold de las columnas nuevas:
+        sent_n_oraciones  sent_score_mean  sent_score_min  sent_score_max  sent_magnitude_mean  sent_magnitude_max
+fold_0                26                9               7               6                   20                   1
+fold_1                11                5               2               2                   10                   0
+fold_2                25               21               8               7                    5                   6
+fold_3                36               16               9               3                   21                   5
+fold_4                12               10               4               1                   11                   4

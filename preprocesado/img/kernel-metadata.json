@@ -1,0 +1,15 @@
+{
+ "id": "rodriguezandresed/examen-lab-ii-preprocesado-img",
+ "title": "examen Lab II - preprocesado img",
+ "code_file": "examen-lab-ii-preprocesado-img.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": true,
+ "dataset_sources": [],
+ "kernel_sources": [],
+ "competition_sources": [
+  "petfinder-adoption-prediction"
+ ]
+}

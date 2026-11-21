@@ -1,0 +1,18 @@
+{
+ "id": "rodriguezandresed/exp-008-img-svd",
+ "title": "EXP-008 img svd",
+ "code_file": "exp-008.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": false,
+ "dataset_sources": [],
+ "competition_sources": [
+  "petfinder-adoption-prediction"
+ ],
+ "kernel_sources": [
+  "rodriguezandresed/examen-lab-ii-preprocesado-texto",
+  "rodriguezandresed/examen-lab-ii-preprocesado-img"
+ ]
+}

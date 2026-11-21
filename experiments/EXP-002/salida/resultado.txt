@@ -1,0 +1,7 @@
+baseline_grupos
+fold_0           0.3266
+fold_1           0.2970
+fold_2           0.3153
+fold_3           0.3385
+fold_4           0.2643
+media 0.3083 desvio 0.029

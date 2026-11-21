@@ -1,0 +1,17 @@
+baseline  exp_012   delta
+fold_0    0.3805   0.3770 -0.0035
+fold_1    0.3742   0.3649 -0.0093
+fold_2    0.3764   0.3843  0.0079
+fold_3    0.3984   0.3995  0.0011
+fold_4    0.3874   0.3444 -0.0430
+media baseline 0.3834 desvio 0.0098
+media exp_012  0.374 desvio 0.0207
+delta media    -0.0093
+folds que mejoran: 2 de 5
+importancia (split) por fold de las columnas nuevas:
+        sentdoc_score  sentdoc_magnitude
+fold_0              6                 34
+fold_1              9                 34
+fold_2              8                 27
+fold_3              9                 59
+fold_4              3                 18

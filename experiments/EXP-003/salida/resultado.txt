@@ -1,0 +1,11 @@
+baseline  exp_003   delta
+fold_0    0.3805   0.3805  0.0000
+fold_1    0.3742   0.3742  0.0000
+fold_2    0.3764   0.3885  0.0121
+fold_3    0.3984   0.3853 -0.0130
+fold_4    0.3874   0.3874  0.0000
+media baseline 0.3834 desvio 0.0098
+media exp_003  0.3832 desvio 0.0059
+delta media    -0.0002
+folds que mejoran: 1 de 5
+importancia (split) de sin_nombre por fold: [0, 0, 1, 1, 0]

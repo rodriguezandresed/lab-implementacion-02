@@ -1,0 +1,216 @@
+[{"stream_name":"stderr","time":11.415858864,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.41590055,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.415904636,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.415907232,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.105000469,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.105027463,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.105032384,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.105036156,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.67513164,"data":"{'petfinder-adoption-prediction': '/kaggle/input/competitions/petfinder-adoption-prediction', 'examen-lab-ii-preprocesado-texto': '/kaggle/input/notebooks/nickel/examen-lab-ii-preprocesado-texto', 'examen-lab-ii-preprocesado-img': '/kaggle/input/notebooks/nickel/examen-lab-ii-preprocesado-img'}\n"}
+,{"stream_name":"stdout","time":33.9463136,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.152154 seconds.\n"}
+,{"stream_name":"stdout","time":33.94635092,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":33.946355407,"data":"[LightGBM] [Info] Total Bins 329411\n"}
+,{"stream_name":"stdout","time":33.946359106,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":33.946363121,"data":"[LightGBM] [Info] Start training from score -3.584019\n"}
+,{"stream_name":"stdout","time":33.946366851,"data":"[LightGBM] [Info] Start training from score -1.575342\n"}
+,{"stream_name":"stdout","time":33.94637049,"data":"[LightGBM] [Info] Start training from score -1.310378\n"}
+,{"stream_name":"stdout","time":33.946374175,"data":"[LightGBM] [Info] Start training from score -1.520088\n"}
+,{"stream_name":"stdout","time":33.946377802,"data":"[LightGBM] [Info] Start training from score -1.284141\n"}
+,{"stream_name":"stdout","time":111.468515277,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.177251 seconds.\n"}
+,{"stream_name":"stdout","time":111.468613895,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":111.468622342,"data":"[LightGBM] [Info] Total Bins 329411\n"}
+,{"stream_name":"stdout","time":111.468626839,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":111.875443064,"data":"[LightGBM] [Info] Start training from score -3.584019\n"}
+,{"stream_name":"stdout","time":111.875507382,"data":"[LightGBM] [Info] Start training from score -1.575342\n"}
+,{"stream_name":"stdout","time":111.875514667,"data":"[LightGBM] [Info] Start training from score -1.310378\n"}
+,{"stream_name":"stdout","time":111.875520885,"data":"[LightGBM] [Info] Start training from score -1.520088\n"}
+,{"stream_name":"stdout","time":111.875526231,"data":"[LightGBM] [Info] Start training from score -1.284141\n"}
+,{"stream_name":"stdout","time":112.713177558,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":144.037714375,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":144.037757103,"data":"[35]\ttraining's multi_logloss: 0.827873\ttraining's kappa: 0.762577\tvalid_1's multi_logloss: 1.31039\tvalid_1's kappa: 0.380513\n"}
+,{"stream_name":"stdout","time":147.290394631,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.160213 seconds.\n"}
+,{"stream_name":"stdout","time":147.290428721,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":147.290432379,"data":"[LightGBM] [Info] Total Bins 329401\n"}
+,{"stream_name":"stdout","time":147.290435632,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":147.290439103,"data":"[LightGBM] [Info] Start training from score -3.602202\n"}
+,{"stream_name":"stdout","time":147.290442208,"data":"[LightGBM] [Info] Start training from score -1.572526\n"}
+,{"stream_name":"stdout","time":147.290445131,"data":"[LightGBM] [Info] Start training from score -1.309760\n"}
+,{"stream_name":"stdout","time":147.29044805,"data":"[LightGBM] [Info] Start training from score -1.533521\n"}
+,{"stream_name":"stdout","time":147.290450886,"data":"[LightGBM] [Info] Start training from score -1.274551\n"}
+,{"stream_name":"stdout","time":223.571201555,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.158284 seconds.\n"}
+,{"stream_name":"stdout","time":223.571237887,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":223.571244878,"data":"[LightGBM] [Info] Total Bins 329401\n"}
+,{"stream_name":"stdout","time":223.571250056,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":223.995957241,"data":"[LightGBM] [Info] Start training from score -3.602202\n"}
+,{"stream_name":"stdout","time":223.996028338,"data":"[LightGBM] [Info] Start training from score -1.572526\n"}
+,{"stream_name":"stdout","time":223.996034152,"data":"[LightGBM] [Info] Start training from score -1.309760\n"}
+,{"stream_name":"stdout","time":223.996038441,"data":"[LightGBM] [Info] Start training from score -1.533521\n"}
+,{"stream_name":"stdout","time":223.996042756,"data":"[LightGBM] [Info] Start training from score -1.274551\n"}
+,{"stream_name":"stdout","time":224.764813998,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":248.749972801,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":248.750013394,"data":"[26]\ttraining's multi_logloss: 0.921476\ttraining's kappa: 0.704925\tvalid_1's multi_logloss: 1.31592\tvalid_1's kappa: 0.374167\n"}
+,{"stream_name":"stdout","time":251.61790571,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.158322 seconds.\n"}
+,{"stream_name":"stdout","time":251.617943695,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":251.617949196,"data":"[LightGBM] [Info] Total Bins 329413\n"}
+,{"stream_name":"stdout","time":251.617953822,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":251.617958299,"data":"[LightGBM] [Info] Start training from score -3.658821\n"}
+,{"stream_name":"stdout","time":251.617962861,"data":"[LightGBM] [Info] Start training from score -1.571321\n"}
+,{"stream_name":"stdout","time":251.617966993,"data":"[LightGBM] [Info] Start training from score -1.311924\n"}
+,{"stream_name":"stdout","time":251.617971247,"data":"[LightGBM] [Info] Start training from score -1.531591\n"}
+,{"stream_name":"stdout","time":251.617994867,"data":"[LightGBM] [Info] Start training from score -1.269494\n"}
+,{"stream_name":"stdout","time":327.344042336,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.106268 seconds.\n"}
+,{"stream_name":"stdout","time":327.344076716,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":327.344082489,"data":"[LightGBM] [Info] Total Bins 329413\n"}
+,{"stream_name":"stdout","time":327.344086824,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":327.67065108,"data":"[LightGBM] [Info] Start training from score -3.658821\n"}
+,{"stream_name":"stdout","time":327.67068838,"data":"[LightGBM] [Info] Start training from score -1.571321\n"}
+,{"stream_name":"stdout","time":327.670693733,"data":"[LightGBM] [Info] Start training from score -1.311924\n"}
+,{"stream_name":"stdout","time":327.670698301,"data":"[LightGBM] [Info] Start training from score -1.531591\n"}
+,{"stream_name":"stdout","time":327.670702906,"data":"[LightGBM] [Info] Start training from score -1.269494\n"}
+,{"stream_name":"stdout","time":328.440923648,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":347.249372667,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":347.249440591,"data":"[20]\ttraining's multi_logloss: 0.990172\ttraining's kappa: 0.656314\tvalid_1's multi_logloss: 1.33331\tvalid_1's kappa: 0.376382\n"}
+,{"stream_name":"stdout","time":349.988777951,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.155375 seconds.\n"}
+,{"stream_name":"stdout","time":349.988820334,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":349.988825923,"data":"[LightGBM] [Info] Total Bins 329414\n"}
+,{"stream_name":"stdout","time":349.988830776,"data":"[LightGBM] [Info] Number of data points in the train set: 11995, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":349.988835409,"data":"[LightGBM] [Info] Start training from score -3.575134\n"}
+,{"stream_name":"stdout","time":349.988840046,"data":"[LightGBM] [Info] Start training from score -1.582704\n"}
+,{"stream_name":"stdout","time":349.988844669,"data":"[LightGBM] [Info] Start training from score -1.316352\n"}
+,{"stream_name":"stdout","time":349.988849338,"data":"[LightGBM] [Info] Start training from score -1.530518\n"}
+,{"stream_name":"stdout","time":349.988853963,"data":"[LightGBM] [Info] Start training from score -1.265727\n"}
+,{"stream_name":"stdout","time":426.554827505,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.132237 seconds.\n"}
+,{"stream_name":"stdout","time":426.554861373,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":426.554867351,"data":"[LightGBM] [Info] Total Bins 329414\n"}
+,{"stream_name":"stdout","time":426.554871706,"data":"[LightGBM] [Info] Number of data points in the train set: 11995, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":426.905137743,"data":"[LightGBM] [Info] Start training from score -3.575134\n"}
+,{"stream_name":"stdout","time":426.90520806,"data":"[LightGBM] [Info] Start training from score -1.582704\n"}
+,{"stream_name":"stdout","time":426.905213223,"data":"[LightGBM] [Info] Start training from score -1.316352\n"}
+,{"stream_name":"stdout","time":426.905217669,"data":"[LightGBM] [Info] Start training from score -1.530518\n"}
+,{"stream_name":"stdout","time":426.905237461,"data":"[LightGBM] [Info] Start training from score -1.265727\n"}
+,{"stream_name":"stdout","time":427.720569225,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":458.744920505,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":458.744974444,"data":"[35]\ttraining's multi_logloss: 0.832351\ttraining's kappa: 0.746952\tvalid_1's multi_logloss: 1.28821\tvalid_1's kappa: 0.398374\n"}
+,{"stream_name":"stdout","time":461.489377544,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.114728 seconds.\n"}
+,{"stream_name":"stdout","time":461.489414712,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":461.489419652,"data":"[LightGBM] [Info] Total Bins 329401\n"}
+,{"stream_name":"stdout","time":461.489423997,"data":"[LightGBM] [Info] Number of data points in the train set: 11995, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":461.489428477,"data":"[LightGBM] [Info] Start training from score -3.578115\n"}
+,{"stream_name":"stdout","time":461.489432693,"data":"[LightGBM] [Info] Start training from score -1.595365\n"}
+,{"stream_name":"stdout","time":461.489437035,"data":"[LightGBM] [Info] Start training from score -1.312008\n"}
+,{"stream_name":"stdout","time":461.489441241,"data":"[LightGBM] [Info] Start training from score -1.515227\n"}
+,{"stream_name":"stdout","time":461.489445487,"data":"[LightGBM] [Info] Start training from score -1.272251\n"}
+,{"stream_name":"stdout","time":536.308608319,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.127210 seconds.\n"}
+,{"stream_name":"stdout","time":536.308663926,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":536.308670231,"data":"[LightGBM] [Info] Total Bins 329401\n"}
+,{"stream_name":"stdout","time":536.308674646,"data":"[LightGBM] [Info] Number of data points in the train set: 11995, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":536.636261912,"data":"[LightGBM] [Info] Start training from score -3.578115\n"}
+,{"stream_name":"stdout","time":536.636294811,"data":"[LightGBM] [Info] Start training from score -1.595365\n"}
+,{"stream_name":"stdout","time":536.636309596,"data":"[LightGBM] [Info] Start training from score -1.312008\n"}
+,{"stream_name":"stdout","time":536.636314374,"data":"[LightGBM] [Info] Start training from score -1.515227\n"}
+,{"stream_name":"stdout","time":536.63631913,"data":"[LightGBM] [Info] Start training from score -1.272251\n"}
+,{"stream_name":"stdout","time":537.43575176,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":560.297162109,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":560.297217657,"data":"[25]\ttraining's multi_logloss: 0.934421\ttraining's kappa: 0.685734\tvalid_1's multi_logloss: 1.31635\tvalid_1's kappa: 0.387397\n"}
+,{"stream_name":"stdout","time":563.135184777,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.107903 seconds.\n"}
+,{"stream_name":"stdout","time":563.135247362,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":563.135254475,"data":"[LightGBM] [Info] Total Bins 329411\n"}
+,{"stream_name":"stdout","time":563.13525937,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":563.135264059,"data":"[LightGBM] [Info] Start training from score 2.510005\n"}
+,{"stream_name":"stdout","time":580.310426168,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.104023 seconds.\n"}
+,{"stream_name":"stdout","time":580.310470832,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":580.310476824,"data":"[LightGBM] [Info] Total Bins 329411\n"}
+,{"stream_name":"stdout","time":580.31048164,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":580.647988181,"data":"[LightGBM] [Info] Start training from score 2.510005\n"}
+,{"stream_name":"stdout","time":580.873758843,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":591.587856737,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":591.587895182,"data":"[50]\ttraining's l2: 0.732097\ttraining's kappa: 0.53913\tvalid_1's l2: 1.09523\tvalid_1's kappa: 0.321011\n"}
+,{"stream_name":"stdout","time":592.852046605,"data":"[LightGBM] [Warning] Categorical features with more bins than the configured maximum bin number found.\n"}
+,{"stream_name":"stdout","time":592.852081021,"data":"[LightGBM] [Warning] For categorical features, max_bin and max_bin_by_feature may be ignored with a large number of categories.\n"}
+,{"stream_name":"stdout","time":594.326772689,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.144341 seconds.\n"}
+,{"stream_name":"stdout","time":594.32680974,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":594.326831379,"data":"[LightGBM] [Info] Total Bins 329401\n"}
+,{"stream_name":"stdout","time":594.326836566,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":594.326841509,"data":"[LightGBM] [Info] Start training from score 2.512840\n"}
+,{"stream_name":"stdout","time":612.359036836,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.139895 seconds.\n"}
+,{"stream_name":"stdout","time":612.359081008,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":612.359087545,"data":"[LightGBM] [Info] Total Bins 329401\n"}
+,{"stream_name":"stdout","time":612.359092325,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":612.719368079,"data":"[LightGBM] [Info] Start training from score 2.512840\n"}
+,{"stream_name":"stdout","time":612.938403432,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":615.469600397,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":615.469639198,"data":"[8]\ttraining's l2: 1.12356\ttraining's kappa: 0.327378\tvalid_1's l2: 1.20488\tvalid_1's kappa: 0.254589\n"}
+,{"stream_name":"stdout","time":618.129699282,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.103771 seconds.\n"}
+,{"stream_name":"stdout","time":618.12974816,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":618.129753486,"data":"[LightGBM] [Info] Total Bins 329413\n"}
+,{"stream_name":"stdout","time":618.129758139,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":618.129762981,"data":"[LightGBM] [Info] Start training from score 2.518843\n"}
+,{"stream_name":"stdout","time":634.37041983,"data":"[LightGBM] [Warning] Categorical features with more bins than the configured maximum bin number found.\n"}
+,{"stream_name":"stdout","time":634.370459093,"data":"[LightGBM] [Warning] For categorical features, max_bin and max_bin_by_feature may be ignored with a large number of categories.\n"}
+,{"stream_name":"stdout","time":635.780364588,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.118869 seconds.\n"}
+,{"stream_name":"stdout","time":635.780400551,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":635.780405615,"data":"[LightGBM] [Info] Total Bins 329413\n"}
+,{"stream_name":"stdout","time":635.780409176,"data":"[LightGBM] [Info] Number of data points in the train set: 11994, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":636.108727169,"data":"[LightGBM] [Info] Start training from score 2.518843\n"}
+,{"stream_name":"stdout","time":636.324985172,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":645.904748483,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":645.904795212,"data":"[44]\ttraining's l2: 0.757357\ttraining's kappa: 0.521345\tvalid_1's l2: 1.11614\tvalid_1's kappa: 0.320392\n"}
+,{"stream_name":"stdout","time":647.157096201,"data":"[LightGBM] [Warning] Categorical features with more bins than the configured maximum bin number found.\n"}
+,{"stream_name":"stdout","time":647.157158101,"data":"[LightGBM] [Warning] For categorical features, max_bin and max_bin_by_feature may be ignored with a large number of categories.\n"}
+,{"stream_name":"stdout","time":648.523238486,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.103509 seconds.\n"}
+,{"stream_name":"stdout","time":648.523328417,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":648.523350787,"data":"[LightGBM] [Info] Total Bins 329414\n"}
+,{"stream_name":"stdout","time":648.52335568,"data":"[LightGBM] [Info] Number of data points in the train set: 11995, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":648.523360144,"data":"[LightGBM] [Info] Start training from score 2.519050\n"}
+,{"stream_name":"stdout","time":665.712607848,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.120539 seconds.\n"}
+,{"stream_name":"stdout","time":665.712638789,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":665.712644461,"data":"[LightGBM] [Info] Total Bins 329414\n"}
+,{"stream_name":"stdout","time":665.712648901,"data":"[LightGBM] [Info] Number of data points in the train set: 11995, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":666.048761921,"data":"[LightGBM] [Info] Start training from score 2.519050\n"}
+,{"stream_name":"stdout","time":666.263349729,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":679.272386912,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":679.272437983,"data":"[63]\ttraining's l2: 0.676894\ttraining's kappa: 0.575146\tvalid_1's l2: 1.05424\tvalid_1's kappa: 0.345347\n"}
+,{"stream_name":"stdout","time":680.539230636,"data":"[LightGBM] [Warning] Categorical features with more bins than the configured maximum bin number found.\n"}
+,{"stream_name":"stdout","time":680.539266093,"data":"[LightGBM] [Warning] For categorical features, max_bin and max_bin_by_feature may be ignored with a large number of categories.\n"}
+,{"stream_name":"stdout","time":681.972018279,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.124215 seconds.\n"}
+,{"stream_name":"stdout","time":681.97207328,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":681.972078239,"data":"[LightGBM] [Info] Total Bins 329401\n"}
+,{"stream_name":"stdout","time":681.972082008,"data":"[LightGBM] [Info] Number of data points in the train set: 11995, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":681.972085912,"data":"[LightGBM] [Info] Start training from score 2.521467\n"}
+,{"stream_name":"stdout","time":699.509443137,"data":"[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.119558 seconds.\n"}
+,{"stream_name":"stdout","time":699.509471519,"data":"You can set `force_col_wise=true` to remove the overhead.\n"}
+,{"stream_name":"stdout","time":699.509476075,"data":"[LightGBM] [Info] Total Bins 329401\n"}
+,{"stream_name":"stdout","time":699.509479704,"data":"[LightGBM] [Info] Number of data points in the train set: 11995, number of used features: 1307\n"}
+,{"stream_name":"stdout","time":699.844946959,"data":"[LightGBM] [Info] Start training from score 2.521467\n"}
+,{"stream_name":"stdout","time":700.069952875,"data":"Training until validation scores don't improve for 5 rounds\n"}
+,{"stream_name":"stdout","time":707.095995229,"data":"Early stopping, best iteration is:\n"}
+,{"stream_name":"stdout","time":707.096028271,"data":"[31]\ttraining's l2: 0.852283\ttraining's kappa: 0.444707\tvalid_1's l2: 1.1132\tvalid_1's kappa: 0.311074\n"}
+,{"stream_name":"stdout","time":707.146797812,"data":"        baseline  exp_005   delta\n"}
+,{"stream_name":"stdout","time":707.146821671,"data":"fold_0    0.3805   0.3210 -0.0595\n"}
+,{"stream_name":"stdout","time":707.14682698,"data":"fold_1    0.3742   0.2546 -0.1196\n"}
+,{"stream_name":"stdout","time":707.146830754,"data":"fold_2    0.3764   0.3204 -0.0560\n"}
+,{"stream_name":"stdout","time":707.146834364,"data":"fold_3    0.3984   0.3453 -0.0530\n"}
+,{"stream_name":"stdout","time":707.146838023,"data":"fold_4    0.3874   0.3111 -0.0763\n"}
+,{"stream_name":"stdout","time":707.146841594,"data":"media baseline 0.3834 desvio 0.0098\n"}
+,{"stream_name":"stdout","time":707.146845176,"data":"media exp_005  0.3105 desvio 0.0337\n"}
+,{"stream_name":"stdout","time":707.146848767,"data":"delta media    -0.0729\n"}
+,{"stream_name":"stdout","time":707.1468612,"data":"folds que mejoran: 0 de 5\n"}
+,{"stream_name":"stdout","time":707.213662099,"data":"PetID,AdoptionSpeed\r\n"}
+,{"stream_name":"stdout","time":707.213696886,"data":"e2dfc2935,3\r\n"}
+,{"stream_name":"stdout","time":707.213701899,"data":"f153b465f,2\r\n"}
+,{"stream_name":"stdout","time":707.213705305,"data":"3c90f3f54,2\r\n"}
+,{"stream_name":"stdout","time":707.213708547,"data":"e02abc8a3,3\r\n"}
+,{"stream_name":"stdout","time":707.213711746,"data":"09f0df7d1,3\r\n"}
+,{"stream_name":"stdout","time":707.213714872,"data":"0487529d4,3\r\n"}
+,{"stream_name":"stdout","time":707.213718031,"data":"bae7c4b1c,3\r\n"}
+,{"stream_name":"stdout","time":707.213721241,"data":"548bcf206,2\r\n"}
+,{"stream_name":"stdout","time":707.213726141,"data":"0f82cea1e,2\r\n"}
+,{"stream_name":"stderr","time":712.569779494,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":712.569818307,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":712.804862286,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":712.804889197,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":713.781149276,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":713.865574051,"data":"[NbConvertApp] Writing 63256 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":716.508559735,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":717.088037783,"data":"[NbConvertApp] Writing 345050 bytes to __results__.html\n"}
+]

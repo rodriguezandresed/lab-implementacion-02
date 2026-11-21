@@ -1,0 +1,10 @@
+baseline  exp_009   delta
+fold_0    0.3210   0.4447  0.1237
+fold_1    0.2546   0.3810  0.1264
+fold_2    0.3204   0.4268  0.1064
+fold_3    0.3453   0.4447  0.0994
+fold_4    0.3111   0.4267  0.1156
+media baseline 0.3105 desvio 0.0337
+media exp_009  0.4248 desvio 0.0261
+delta media    0.1143
+folds que mejoran: 5 de 5
