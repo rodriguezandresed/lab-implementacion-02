@@ -1,0 +1,20 @@
+{
+ "id": "rodriguezandresed/exp-023-stats-clip",
+ "title": "EXP-023 stats clip",
+ "code_file": "exp-023.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": false,
+ "dataset_sources": [],
+ "competition_sources": [
+  "petfinder-adoption-prediction"
+ ],
+ "kernel_sources": [
+  "rodriguezandresed/examen-lab-ii-preprocesado-texto",
+  "rodriguezandresed/examen-lab-ii-preprocesado-img",
+  "rodriguezandresed/examen-lab-ii-preprocesado-texto-v2",
+  "rodriguezandresed/examen-lab-ii-preprocesado-img-v2"
+ ]
+}

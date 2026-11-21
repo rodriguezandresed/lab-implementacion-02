@@ -1,0 +1,12 @@
+folds agrupados por RescuerID; baseline = EXP-017
+        baseline  exp_020   delta
+fold_0    0.3838   0.3893  0.0055
+fold_1    0.3554   0.3745  0.0191
+fold_2    0.3854   0.3879  0.0025
+fold_3    0.3949   0.4121  0.0172
+fold_4    0.3662   0.3408 -0.0254
+media baseline 0.3771 desvio 0.016
+media exp_020  0.3809 desvio 0.0262
+delta media    0.0038
+folds que mejoran: 4 de 5
+CV KFold(5) del modelo de la submission: 0.4338 (EXP-017: 0.432)

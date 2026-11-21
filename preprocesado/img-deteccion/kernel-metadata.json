@@ -1,0 +1,16 @@
+{
+ "id": "rodriguezandresed/examen-lab-ii-preprocesado-img-deteccion",
+ "title": "examen Lab II - preprocesado img deteccion",
+ "code_file": "examen-lab-ii-preprocesado-img-deteccion.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": true,
+ "docker_image_pinning_type": "latest",
+ "dataset_sources": [],
+ "kernel_sources": [],
+ "competition_sources": [
+  "petfinder-adoption-prediction"
+ ]
+}

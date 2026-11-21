@@ -28,6 +28,16 @@ Cada fila es un spec distinto.
 - [ ] SVD de imagen + cortes por cuantiles: `experiments/EXP-017/EXP-017.md`. 0.4341 ± 0.0139, delta +0.0508, 5 de 5 folds. Frenado por la regla de > 0.02: falta decidir si se acepta. Late submission (2026-11-20): private score 0.37716; el baseline (salida de EXP-016, `test_preds` sin tocar) da 0.30074. Con las imágenes arregladas (v2, 2026-11-20): CV 0.4320, folds agrupados 0.3771, private score 0.38381.
 - [ ] Lo mismo con folds agrupados por `RescuerID`: `experiments/EXP-018/EXP-018.md`. 0.3662 ± 0.0151 contra 0.3083 ± 0.029 (repite EXP-002), delta +0.0579, 5 de 5 folds. Frenado por la regla de > 0.02.
 
+### Features con modelos modernos (2026-11-21)
+Todas sobre EXP-017, decididas con folds agrupados por `RescuerID` (baseline 0.3771). Inputs: `preprocesado/texto-v2/` y `preprocesado/img-v2/`.
+- [x] Estadísticas simples de texto y foto: `experiments/EXP-019/EXP-019.md`. Agrupado 0.3744 (delta -0.0028, 4 de 5, fold 4 cae 0.038); KFold 0.4501. Private **0.40321** (mejor).
+- [x] Preguntas zero-shot (DeBERTa-v3 NLI): `experiments/EXP-020/EXP-020.md`. Agrupado 0.3809 (delta +0.0038, 4 de 5, sube el desvío); KFold 0.4338. Private 0.38075.
+- [x] Puntajes CLIP de la foto 1: `experiments/EXP-021/EXP-021.md`. Agrupado 0.3779 (delta +0.0007, 2 de 5); KFold 0.4460. Private 0.39926.
+- [x] `txt_score` desde embeddings `multilingual-e5-base`: `experiments/EXP-022/EXP-022.md`. Agrupado 0.3750 (delta -0.0021, 3 de 5); KFold 0.4286. No subido.
+- [ ] EXP-019 + EXP-021 juntos: `experiments/EXP-023/EXP-023.md`. Corriendo.
+- [ ] Detección de animales (DETR): `preprocesado/img-deteccion/`. Corriendo; el experimento va después.
+- [ ] El CV agrupado dijo "descartar" a 019 y 021 y el leaderboard los puso primeros: revisar por qué cae el fold 4 (¿early stopping de 5 rondas inestable?).
+
 ### Variantes de elecciones propias
 - [x] Vision extendido (crop hints, cantidad de colores) sobre EXP-006: `experiments/EXP-011/EXP-011.md`. Descartado: delta +0.0070 contra EXP-006, sube el desvío.
 - [x] Sentiment del documento: `experiments/EXP-012/EXP-012.md`. Descartado: delta -0.0093, mejora en 2 de 5 folds.

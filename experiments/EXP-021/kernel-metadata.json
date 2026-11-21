@@ -1,0 +1,19 @@
+{
+ "id": "rodriguezandresed/exp-021-clip-img",
+ "title": "EXP-021 clip img",
+ "code_file": "exp-021.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": false,
+ "dataset_sources": [],
+ "competition_sources": [
+  "petfinder-adoption-prediction"
+ ],
+ "kernel_sources": [
+  "rodriguezandresed/examen-lab-ii-preprocesado-texto",
+  "rodriguezandresed/examen-lab-ii-preprocesado-img",
+  "rodriguezandresed/examen-lab-ii-preprocesado-img-v2"
+ ]
+}
