@@ -34,7 +34,7 @@ Todas sobre EXP-017, decididas con folds agrupados por `RescuerID` (baseline 0.3
 - [x] Preguntas zero-shot (DeBERTa-v3 NLI): `experiments/EXP-020/EXP-020.md`. Agrupado 0.3809 (delta +0.0038, 4 de 5, sube el desvío); KFold 0.4338. Private 0.38075.
 - [x] Puntajes CLIP de la foto 1: `experiments/EXP-021/EXP-021.md`. Agrupado 0.3779 (delta +0.0007, 2 de 5); KFold 0.4460. Private 0.39926.
 - [x] `txt_score` desde embeddings `multilingual-e5-base`: `experiments/EXP-022/EXP-022.md`. Agrupado 0.3750 (delta -0.0021, 3 de 5); KFold 0.4286. No subido.
-- [ ] EXP-019 + EXP-021 juntos: `experiments/EXP-023/EXP-023.md`. Corriendo.
+- [x] EXP-019 + EXP-021 juntos: `experiments/EXP-023/EXP-023.md`. Agrupado 0.3897 (delta +0.0125, 4 de 5, sube el desvío); KFold 0.4400. Private 0.40141: no supera a EXP-019.
 - [ ] Detección de animales (DETR): `preprocesado/img-deteccion/`. Corriendo; el experimento va después.
 - [ ] El CV agrupado dijo "descartar" a 019 y 021 y el leaderboard los puso primeros: revisar por qué cae el fold 4 (¿early stopping de 5 rondas inestable?).
 

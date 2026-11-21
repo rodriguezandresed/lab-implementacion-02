@@ -23,3 +23,4 @@ EXP-020,2026-11-21,EXP-020 zeroshot texto,0.3809,0.0262,"descartar (delta +0.003
 EXP-022,2026-11-21,EXP-022 txt score e5,0.375,0.0263,"descartar (delta -0.0021, mejora en 3/5, sube el desvio)"
 EXP-019,2026-11-21,EXP-019 stats texto img,0.3744,0.0279,"descartar (delta -0.0028, mejora en 4/5, sube el desvio)"
 EXP-021,2026-11-21,EXP-021 clip img,0.3779,0.0079,"descartar (delta +0.0007, mejora en 2/5)"
+EXP-023,2026-11-21,EXP-023 stats clip,0.3897,0.0284,"descartar (delta +0.0125, mejora en 4/5, sube el desvio)"

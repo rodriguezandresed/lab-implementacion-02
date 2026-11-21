@@ -27,6 +27,7 @@ Para correrlo en Kaggle: `python experiments/correr.py EXP-019` (necesita `~/.ka
 | Notebook | Qué es | Private |
 |---|---|---|
 | **EXP-019** | EXP-017 + estadísticas simples de texto y foto | **0.40321** |
+| EXP-023 | EXP-019 + CLIP juntos | 0.40141 |
 | EXP-021 | EXP-017 + puntajes CLIP de la foto 1 (tierno, jaula, borrosa, persona, varios animales) | 0.39926 |
 | EXP-017 | SVD de imagen + cortes por cuantiles | 0.38381 |
 | EXP-020 | EXP-017 + preguntas zero-shot sobre `Description` (DeBERTa-v3 NLI) | 0.38075 |
@@ -44,7 +45,9 @@ Para correrlo en Kaggle: `python experiments/correr.py EXP-019` (necesita `~/.ka
 
 EXP-009 y EXP-008 se subieron con las imágenes viejas (con el bug del `PetID`). EXP-010 a EXP-015 no se subieron: su CV no superaba al baseline. EXP-022 (`txt_score`: ridge sobre embeddings `multilingual-e5-base`, dentro del fold) no se subió: empeoraba en los dos CV.
 
-En curso: EXP-023 (EXP-019 + CLIP juntos) y una detección de animales con DETR (cuánto de la foto ocupa el animal, cuántos hay).
+EXP-023 (EXP-019 + CLIP) tuvo el mejor CV agrupado (0.3897) pero no superó a EXP-019 en el leaderboard (0.40141 contra 0.40321): las dos fuentes no se suman.
+
+En curso: detección de animales con DETR (cuánto de la foto ocupa el animal, cuántos hay), sobre EXP-019.
 
 Lo que más sumó: los cortes por cuantiles (+0.07), después las columnas simples (+0.02) y CLIP (+0.015). Los modelos de texto (zero-shot, embeddings) no mejoraron el leaderboard.
 
