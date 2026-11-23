@@ -26,3 +26,7 @@ EXP-021,2026-11-21,EXP-021 clip img,0.3779,0.0079,"descartar (delta +0.0007, mej
 EXP-023,2026-11-21,EXP-023 stats clip,0.3897,0.0284,"descartar (delta +0.0125, mejora en 4/5, sube el desvio)"
 EXP-024,2026-11-22,EXP-024 deteccion animal,0.3827,0.0395,"descartar (delta +0.0083, mejora en 2/5, sube el desvio)"
 EXP-025,2026-11-22,EXP-025 best params,0.4168,0.0229,sospechar y frenar (delta +0.0425 > 0.02)
+EXP-027,2026-11-23,EXP-027 clip sobre 025,0.4166,0.0216,"descartar (delta -0.0003, mejora en 2/5)"
+EXP-028,2026-11-23,EXP-028 deteccion sobre 025,0.4139,0.0238,"descartar (delta -0.0029, mejora en 0/5, sube el desvio)"
+EXP-026,2026-11-23,EXP-026 rescuer count sobre 025,0.4256,0.0206,"aceptar (delta +0.0087, mejora en 5/5)"
+EXP-029,2026-11-23,EXP-029 zeroshot sobre 025,0.4177,0.0223,"descartar (delta +0.0009, mejora en 3/5)"

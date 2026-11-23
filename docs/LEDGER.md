@@ -39,6 +39,14 @@ Todas sobre EXP-017, decididas con folds agrupados por `RescuerID` (baseline 0.3
 - [ ] Hiperparámetros del grid search sin early stopping sobre EXP-019: `experiments/EXP-025/EXP-025.md`. Agrupado 0.4168 (delta +0.0425, 5 de 5, baja el desvío); KFold 0.4613. Private **0.40393** (mejor). Frenado por la regla de > 0.02: el salto es del CV (el `early_stopping(5)` del baseline cortaba pronto); en el leaderboard es +0.0007. Falta decidir si se acepta.
 - [x] El CV agrupado dijo "descartar" a 019 y 021 y el leaderboard los puso primeros; caía el fold 4. Causa probable: `early_stopping(5)`. Con 300 árboles fijos (EXP-025) el fold 4 pasa de 0.328 a 0.385.
 
+### Re-pruebas sobre EXP-025 (2026-11-23)
+Baseline EXP-025, folds agrupados por `RescuerID` (0.4168), KFold 0.4613, private 0.40393.
+- [x] `rescuer_count` (definición de EXP-004): `experiments/EXP-026/EXP-026.md`. Agrupado 0.4256 (delta +0.0087, 5 de 5): **aceptado**. KFold 0.4693. Private **0.42045** (mejor).
+- [x] CLIP: `experiments/EXP-027/EXP-027.md`. Agrupado 0.4166 (delta -0.0003, 2 de 5): descartado. KFold 0.4651. Private 0.40572.
+- [x] Detección: `experiments/EXP-028/EXP-028.md`. Agrupado 0.4139 (delta -0.0029, 0 de 5): descartado. KFold 0.4598. Private 0.39872.
+- [x] Zero-shot: `experiments/EXP-029/EXP-029.md`. Agrupado 0.4177 (delta +0.0009, 3 de 5): descartado. KFold 0.4626. Private 0.40159.
+- [ ] Siguiente base: EXP-026. Pendientes sobre ella: promedio de seeds, re-tunear hiperparámetros con las columnas nuevas, selección genética sobre todas las columnas.
+
 ### Variantes de elecciones propias
 - [x] Vision extendido (crop hints, cantidad de colores) sobre EXP-006: `experiments/EXP-011/EXP-011.md`. Descartado: delta +0.0070 contra EXP-006, sube el desvío.
 - [x] Sentiment del documento: `experiments/EXP-012/EXP-012.md`. Descartado: delta -0.0093, mejora en 2 de 5 folds.
