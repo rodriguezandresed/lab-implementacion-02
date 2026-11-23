@@ -35,8 +35,9 @@ Todas sobre EXP-017, decididas con folds agrupados por `RescuerID` (baseline 0.3
 - [x] Puntajes CLIP de la foto 1: `experiments/EXP-021/EXP-021.md`. Agrupado 0.3779 (delta +0.0007, 2 de 5); KFold 0.4460. Private 0.39926.
 - [x] `txt_score` desde embeddings `multilingual-e5-base`: `experiments/EXP-022/EXP-022.md`. Agrupado 0.3750 (delta -0.0021, 3 de 5); KFold 0.4286. No subido.
 - [x] EXP-019 + EXP-021 juntos: `experiments/EXP-023/EXP-023.md`. Agrupado 0.3897 (delta +0.0125, 4 de 5, sube el desvío); KFold 0.4400. Private 0.40141: no supera a EXP-019.
-- [ ] Detección de animales (DETR): `preprocesado/img-deteccion/`. Corriendo; el experimento va después.
-- [ ] El CV agrupado dijo "descartar" a 019 y 021 y el leaderboard los puso primeros: revisar por qué cae el fold 4 (¿early stopping de 5 rondas inestable?).
+- [x] Detección de animales (RT-DETR, `preprocesado/img-deteccion/`) sobre EXP-019: `experiments/EXP-024/EXP-024.md`. Agrupado 0.3827 (delta +0.0083 contra EXP-019, 2 de 5, sube el desvío); KFold 0.4536. Private 0.39997: no supera a EXP-019.
+- [ ] Hiperparámetros del grid search sin early stopping sobre EXP-019: `experiments/EXP-025/EXP-025.md`. Agrupado 0.4168 (delta +0.0425, 5 de 5, baja el desvío); KFold 0.4613. Private **0.40393** (mejor). Frenado por la regla de > 0.02: el salto es del CV (el `early_stopping(5)` del baseline cortaba pronto); en el leaderboard es +0.0007. Falta decidir si se acepta.
+- [x] El CV agrupado dijo "descartar" a 019 y 021 y el leaderboard los puso primeros; caía el fold 4. Causa probable: `early_stopping(5)`. Con 300 árboles fijos (EXP-025) el fold 4 pasa de 0.328 a 0.385.
 
 ### Variantes de elecciones propias
 - [x] Vision extendido (crop hints, cantidad de colores) sobre EXP-006: `experiments/EXP-011/EXP-011.md`. Descartado: delta +0.0070 contra EXP-006, sube el desvío.

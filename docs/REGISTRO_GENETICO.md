@@ -24,8 +24,8 @@ Las 26 columnas base (sin componentes SVD): `Type`, `Age`, `Breed1`, `Breed2`, `
 | 2 | | v4 | selección | 26 (sin texto) | pob 10, gen 6 | 0,3955 | 26 de 26 | | no sacó ninguna: ningún subconjunto mejora a las 26 |
 | 3 | | v5b | selección | 46 (solo embeddings) | pob 10, gen 3 | 0,3905 | 42 de 46 | | antes de sembrar el individuo sin embeddings |
 | 4 | | v5b (versión 1) | selección | 46 (solo embeddings) | pob 10, gen 3, sin semilla | 0,3929 | 39 de 46 | | afuera: `emb_svd_0`, `emb_svd_3`, `emb_svd_7`, `emb_svd_13`, `emb_svd_14`, `emb_svd_17`, `sin_nombre` |
-| 5 | | v5b (versión 1) | construcción | 46 (solo embeddings), fórmulas sobre las 26 | pob 10, gen 3, barrido n_feat | 0,3935 | 46 + 10 | | **enviada** (versión 1); fórmulas abajo |
-| 6 | | v5b (versión 2) | selección | 46 (solo embeddings) | pob 20, gen 20, con semilla sin embeddings | **0,3965** | 25 de 46 | | **enviada** (versión 2); 12,5 min; columnas abajo |
+| 5 | | v5b (versión 1) | construcción | 46 (solo embeddings), fórmulas sobre las 26 | pob 10, gen 3, barrido n_feat | 0,3935 | 46 + 10 | 0,36207 (private) | **enviada** (versión 1); fórmulas abajo |
+| 6 | | v5b (versión 2) | selección | 46 (solo embeddings) | pob 20, gen 20, con semilla sin embeddings | **0,3965** | 25 de 46 | **0,37171** (private) | **enviada** (versión 2); 12,5 min; columnas abajo |
 | 7 | | v5b (versión 2) | construcción | igual que la 5 | igual que la 5 | 0,3935 | 46 + 10 | | mismo resultado que la 5 (misma semilla, mismo código) |
 
 ## Columnas ganadoras
@@ -67,4 +67,4 @@ Lectura: la curva es plana (0,3915 a 0,3935); la cantidad de fórmulas casi no i
 ## Pendiente
 
 - [x] Corrida 6: v5b con la semilla sin embeddings y selección pob 20 × gen 20. Dio 0,3965 (esperado ≥ 0,3955).
-- [ ] Anotar el LB de la versión 1 (corrida 5, +10 columnas) y de la versión 2 (corrida 6, selección) y compararlos.
+- [x] LB (private, 2026-11-23): versión 1 (construcción) 0,36207, versión 2 (selección) 0,37171; v3 sin genético 0,36805. La selección suma +0,004; la construcción resta.
