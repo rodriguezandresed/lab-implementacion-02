@@ -1,0 +1,14 @@
+QWK medio por seed (folds agrupados por RescuerID)
+            033     038
+seed_42  0.4392  0.4454
+seed_1   0.4369  0.4406
+seed_2   0.4281  0.4296
+seed_3   0.4320  0.4382
+seed_4   0.4381  0.4392
+promedio 033 0.4349  038 0.4386
+
+038 vs 033: delta +0.0037 (por seed +0.0011 a +0.0062), mejora en 5/5 seeds y 17/25 folds -> empate
+   por seed: 42:+0.0062  1:+0.0037  2:+0.0015  3:+0.0062  4:+0.0011
+CV KFold(5) del modelo de la submission: 0.4651 (EXP-033: 0.4623)
+submit: EXP-038 foto promedio + txt_score e5 sobre EXP-033 | 
+Kaggle: private 0.44165 (EXP-033: 0.42944, mejor EXP-032: 0.44273)

@@ -1,0 +1,18 @@
+lab2-exp-036 -> Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/rodriguezandresed/lab2-exp-036
+lab2-exp-036 complete
+cuments\Maestria_de_Datos_Austral\Materias\data-science-master\lab_implementacion_02\experiments\EXP-036\salida\submission.csv
+Kernel log downloaded to C:\Users\Andres\Documents\Maestria_de_Datos_Austral\Materias\data-science-master\lab_implementacion_02\experiments\EXP-036\salida\lab2-exp-036.log 
+
+QWK medio por seed (folds agrupados por RescuerID)
+            033     036
+seed_42  0.4392  0.4396
+seed_1   0.4369  0.4388
+seed_2   0.4281  0.4276
+seed_3   0.4320  0.4312
+seed_4   0.4381  0.4381
+promedio 033 0.4349  036 0.4350
+
+036 vs 033: delta +0.0002 (por seed -0.0008 a +0.0020), mejora en 2/5 seeds y 12/25 folds -> empate
+   por seed: 42:+0.0003  1:+0.0020  2:-0.0005  3:-0.0008  4:-0.0000
+CV KFold(5) del modelo de la submission: 0.4621 (EXP-033: 0.4623)
+

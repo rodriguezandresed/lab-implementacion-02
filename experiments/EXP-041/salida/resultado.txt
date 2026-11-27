@@ -1,0 +1,14 @@
+QWK medio por seed (folds agrupados por RescuerID)
+            033     041
+seed_42  0.4392  0.4416
+seed_1   0.4369  0.4418
+seed_2   0.4281  0.4287
+seed_3   0.4320  0.4342
+seed_4   0.4381  0.4397
+promedio 033 0.4349  041 0.4372
+
+041 vs 033: delta +0.0023 (por seed +0.0006 a +0.0049), mejora en 5/5 seeds y 16/25 folds -> empate
+   por seed: 42:+0.0023  1:+0.0049  2:+0.0006  3:+0.0023  4:+0.0015
+CV KFold(5) del modelo de la submission: 0.4645 (EXP-033: 0.4623)
+submit: EXP-041 promedio de 5 seeds de LightGBM sobre EXP-033 | 
+Kaggle: private 0.43105 (EXP-033: 0.42944, mejor EXP-032: 0.44273)

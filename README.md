@@ -2,9 +2,32 @@
 
 Predecir `AdoptionSpeed` (0 a 4) con QWK como métrica.
 
-## Mejor modelo: `experiments/EXP-026/`
+## Mejor modelo
 
-Private score **0.42045** (late submission). Es EXP-025 más una columna, `rescuer_count`: cuántas publicaciones tiene el mismo `RescuerID`, contado dentro de cada dataset (train en train, test en test), sin usar el target. Distingue refugios de particulares. Con folds agrupados por `RescuerID` sube de 0.4168 a 0.4256 y mejora los 5 folds (aceptado por el criterio); en el leaderboard, +0.0165.
+- **Mejor private score: EXP-032, 0.44273** (DINOv2-S, promedio de todas las fotos). Es la submission que cuenta para la nota.
+- **Base vigente por la regla: EXP-040, private 0.44183** (CLIP-L/14, promedio de todas las fotos, sobre EXP-033). Es el único cambio que pasó el criterio medido con 5 particiones agrupadas (delta +0.0069, mejora en 5 de 5). Los experimentos que siguen se construyen sobre ella.
+- EXP-032 y EXP-040 están a 0.001 en el private: una diferencia de ese tamaño es ruido (el private tiene 3.972 mascotas).
+
+## Cola sobre EXP-033 con 5 particiones (EXP-036 a EXP-043)
+
+Con una sola partición agrupada, el promedio de 5 folds se mueve unos ±0.004 según cómo caen los rescatistas, así que deltas de ±0.003 no se podían decidir. Desde EXP-037 cada cambio se mide con `StratifiedGroupKFold(5)` repetido con 5 seeds (42, 1, 2, 3, 4): se acepta si el delta medio de las 25 folds es ≥ +0.004 y mejora en ≥ 4 de 5 seeds. Lo corre `experiments/cola.py` (kernels armados desde `orquestador/kernels/modelo.py`, inputs recalculados en `rodriguezandresed`).
+
+| Exp | Cambio (sobre EXP-033) | Delta 5 particiones | Seeds que mejoran | Private | Decisión |
+|---|---|---|---|---|---|
+| EXP-037 | desempate de 031, 032, 033, 035 | 032 vs 031 +0.0028, 035 vs 033 +0.0037 | 4/5, 5/5 | (sin submit) | empates |
+| EXP-036 | emociones sobre la traducción al inglés (malayo, chino) | +0.0002 | 2/5 | 0.43213 | empate |
+| EXP-038 | foto promedio + `txt_score` e5 | +0.0037 | 5/5 | 0.44165 | empate |
+| EXP-039 | DINOv2-B foto 1 | +0.0026 | 5/5 | 0.43231 | empate |
+| **EXP-040** | **CLIP-L/14 promedio de fotos** | **+0.0069** | **5/5** | **0.44183** | **aceptado** |
+| EXP-041 | promedio de 5 seeds de LightGBM | +0.0023 | 5/5 | 0.43105 | empate |
+| EXP-042 | hiperparámetros re-tuneados (grid de 36) | +0.0034 | 5/5 | 0.43159 | empate |
+| EXP-043 | selección genética (saca 9 de 41 columnas) | +0.0026 | 4/5 | 0.42818 | empate |
+
+Para correr la cola: `python experiments/cola.py [EXP-###...]` (necesita `~/.kaggle/kaggle.json`).
+
+## Cómo se llegó a EXP-026
+
+EXP-026: private score **0.42045** (late submission). Es EXP-025 más una columna, `rescuer_count`: cuántas publicaciones tiene el mismo `RescuerID`, contado dentro de cada dataset (train en train, test en test), sin usar el target. Distingue refugios de particulares. Con folds agrupados por `RescuerID` sube de 0.4168 a 0.4256 y mejora los 5 folds (aceptado por el criterio); en el leaderboard, +0.0165.
 
 EXP-025 es EXP-019 con los hiperparámetros del grid search (`petfinder-v2-gridsearch`): `LGBMRegressor(n_estimators=300, learning_rate=0.03, num_leaves=15, colsample_bytree=0.6)`, 300 árboles fijos en lugar de `early_stopping(5)`, que cortaba demasiado pronto y hacía caer el fold 4.
 
@@ -39,13 +62,20 @@ Para correrlo en Kaggle: `python experiments/correr.py EXP-026` (necesita `~/.ka
 | EXP-034 | EXP-033 con emociones multilingües (mDeBERTa zero-shot) | 0.4364 (−0.0028, 2/5) | 0.42962 | descartado |
 | EXP-035 | EXP-033 + `txt_score` (ridge sobre e5 dentro del fold) | 0.4420 (+0.0028, 3/5) | 0.43393 | descartado por CV |
 
-Base vigente por la regla: EXP-033. EXP-032 y EXP-035 mejoran el private con CV casi plano: falta desempatarlos con varias particiones agrupadas.
+Base por la regla después de esta tanda: EXP-033. EXP-032 y EXP-035 se desempataron en EXP-037 (abajo).
 
 ## Resultados (private score)
 
 | Notebook | Qué es | Private |
 |---|---|---|
 | **EXP-032** | DINOv2-S, promedio de todas las fotos (orquestador) | **0.44273** |
+| EXP-040 | CLIP-L/14 promedio de fotos sobre EXP-033 (base vigente) | 0.44183 |
+| EXP-038 | EXP-033 + foto promedio + `txt_score` | 0.44165 |
+| EXP-039 | DINOv2-B foto 1 sobre EXP-033 | 0.43231 |
+| EXP-036 | EXP-033 + emociones traducidas | 0.43213 |
+| EXP-042 | EXP-033 con hiperparámetros re-tuneados | 0.43159 |
+| EXP-041 | EXP-033 con 5 seeds de LightGBM | 0.43105 |
+| EXP-043 | EXP-033 con selección genética | 0.42818 |
 | EXP-031 | DINOv2-S foto 1 en lugar de EfficientNetB0 | 0.43608 |
 | EXP-035 | EXP-033 + `txt_score` e5 | 0.43393 |
 | EXP-034 | EXP-033 + emociones mDeBERTa | 0.42962 |

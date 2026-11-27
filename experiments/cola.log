@@ -1,0 +1,91 @@
+submit lab2-exp-036 v 1 -> 
+lab2-prep-clip-l14 -> version 1
+lab2-prep-dinov2-b -> version 1
+lab2-exp-038 -> version 1
+lab2-exp-041 -> version 1
+lab2-exp-042 -> version 1
+lab2-exp-043 -> version 1
+EXP-038 complete
+QWK medio por seed (folds agrupados por RescuerID)
+            033     038
+seed_42  0.4392  0.4454
+seed_1   0.4369  0.4406
+seed_2   0.4281  0.4296
+seed_3   0.4320  0.4382
+seed_4   0.4381  0.4392
+promedio 033 0.4349  038 0.4386
+
+038 vs 033: delta +0.0037 (por seed +0.0011 a +0.0062), mejora en 5/5 seeds y 17/25 folds -> empate
+   por seed: 42:+0.0062  1:+0.0037  2:+0.0015  3:+0.0062  4:+0.0011
+CV KFold(5) del modelo de la submission: 0.4651 (EXP-033: 0.4623)
+
+submit lab2-exp-038 v 1 -> 
+EXP-041 complete
+QWK medio por seed (folds agrupados por RescuerID)
+            033     041
+seed_42  0.4392  0.4416
+seed_1   0.4369  0.4418
+seed_2   0.4281  0.4287
+seed_3   0.4320  0.4342
+seed_4   0.4381  0.4397
+promedio 033 0.4349  041 0.4372
+
+041 vs 033: delta +0.0023 (por seed +0.0006 a +0.0049), mejora en 5/5 seeds y 16/25 folds -> empate
+   por seed: 42:+0.0023  1:+0.0049  2:+0.0006  3:+0.0023  4:+0.0015
+CV KFold(5) del modelo de la submission: 0.4645 (EXP-033: 0.4623)
+
+submit lab2-exp-041 v 1 -> 
+lab2-exp-039 -> version 1
+EXP-039 complete
+QWK medio por seed (folds agrupados por RescuerID)
+            033     039
+seed_42  0.4392  0.4416
+seed_1   0.4369  0.4392
+seed_2   0.4281  0.4302
+seed_3   0.4320  0.4377
+seed_4   0.4381  0.4384
+promedio 033 0.4349  039 0.4374
+
+039 vs 033: delta +0.0026 (por seed +0.0003 a +0.0057), mejora en 5/5 seeds y 16/25 folds -> empate
+   por seed: 42:+0.0023  1:+0.0024  2:+0.0021  3:+0.0057  4:+0.0003
+CV KFold(5) del modelo de la submission: 0.4601 (EXP-033: 0.4623)
+
+submit lab2-exp-039 v 1 -> 
+lab2-exp-040 -> version 1
+EXP-042 complete
+QWK medio por seed (folds agrupados por RescuerID)
+            033     042
+seed_42  0.4392  0.4438
+seed_1   0.4369  0.4384
+seed_2   0.4281  0.4323
+seed_3   0.4320  0.4379
+seed_4   0.4381  0.4391
+promedio 033 0.4349  042 0.4383
+
+042 vs 033: delta +0.0034 (por seed +0.0010 a +0.0059), mejora en 5/5 seeds y 17/25 folds -> empate
+   por seed: 42:+0.0045  1:+0.0016  2:+0.0042  3:+0.0059  4:+0.0010
+CV KFold(5) del modelo de la submission: 0.4690 (EXP-033: 0.4623)
+
+submit lab2-exp-042 v 1 -> 
+EXP-040 complete
+QWK medio por seed (folds agrupados por RescuerID)
+            033     040
+seed_42  0.4392  0.4454
+seed_1   0.4369  0.4444
+seed_2   0.4281  0.4365
+seed_3   0.4320  0.4417
+seed_4   0.4381  0.4407
+promedio 033 0.4349  040 0.4418
+
+040 vs 033: delta +0.0069 (por seed +0.0026 a +0.0097), mejora en 5/5 seeds y 19/25 folds -> gana la variante
+   por seed: 42:+0.0062  1:+0.0076  2:+0.0084  3:+0.0097  4:+0.0026
+CV KFold(5) del modelo de la submission: 0.4683 (EXP-033: 0.4623)
+
+submit lab2-exp-040 v 1 -> 
+EXP-036 Kaggle: private 0.43213 (EXP-033: 0.42944, mejor EXP-032: 0.44273)
+EXP-038 Kaggle: private 0.44165 (EXP-033: 0.42944, mejor EXP-032: 0.44273)
+EXP-041 Kaggle: private 0.43105 (EXP-033: 0.42944, mejor EXP-032: 0.44273)
+EXP-039 Kaggle: private 0.43231 (EXP-033: 0.42944, mejor EXP-032: 0.44273)
+EXP-042 Kaggle: private 0.43159 (EXP-033: 0.42944, mejor EXP-032: 0.44273)
+EXP-040 Kaggle: private 0.44183 (EXP-033: 0.42944, mejor EXP-032: 0.44273)
+cola terminada

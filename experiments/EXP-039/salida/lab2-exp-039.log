@@ -1,0 +1,33 @@
+[{"stream_name":"stdout","time":16.108905466,"data":"033 columnas 425 sin embedding: 341\n"}
+,{"stream_name":"stdout","time":16.138989053,"data":"039 columnas 809 sin embedding: 341\n"}
+,{"stream_name":"stdout","time":29.676894547,"data":"seed 42 spec 033: media 0.4392\n"}
+,{"stream_name":"stdout","time":40.902509378,"data":"seed 42 spec 039: media 0.4416\n"}
+,{"stream_name":"stdout","time":52.86531445,"data":"seed 1 spec 033: media 0.4369\n"}
+,{"stream_name":"stdout","time":64.899184102,"data":"seed 1 spec 039: media 0.4392\n"}
+,{"stream_name":"stdout","time":77.17588271,"data":"seed 2 spec 033: media 0.4281\n"}
+,{"stream_name":"stdout","time":88.686562431,"data":"seed 2 spec 039: media 0.4302\n"}
+,{"stream_name":"stdout","time":100.455783574,"data":"seed 3 spec 033: media 0.4320\n"}
+,{"stream_name":"stdout","time":111.711113687,"data":"seed 3 spec 039: media 0.4377\n"}
+,{"stream_name":"stdout","time":123.357364143,"data":"seed 4 spec 033: media 0.4381\n"}
+,{"stream_name":"stdout","time":135.057081066,"data":"seed 4 spec 039: media 0.4384\n"}
+,{"stream_name":"stdout","time":135.064873709,"data":"== resultado ==\n"}
+,{"stream_name":"stdout","time":135.064910004,"data":"QWK medio por seed (folds agrupados por RescuerID)\n"}
+,{"stream_name":"stdout","time":135.064917918,"data":"            033     039\n"}
+,{"stream_name":"stdout","time":135.06492354,"data":"seed_42  0.4392  0.4416\n"}
+,{"stream_name":"stdout","time":135.064928741,"data":"seed_1   0.4369  0.4392\n"}
+,{"stream_name":"stdout","time":135.064938865,"data":"seed_2   0.4281  0.4302\n"}
+,{"stream_name":"stdout","time":135.064942775,"data":"seed_3   0.4320  0.4377\n"}
+,{"stream_name":"stdout","time":135.064946109,"data":"seed_4   0.4381  0.4384\n"}
+,{"stream_name":"stdout","time":135.064949501,"data":"promedio 033 0.4349  039 0.4374\n"}
+,{"stream_name":"stdout","time":135.064952897,"data":"\n"}
+,{"stream_name":"stdout","time":135.064956192,"data":"039 vs 033: delta +0.0026 (por seed +0.0003 a +0.0057), mejora en 5/5 seeds y 16/25 folds -\u003e empate\n"}
+,{"stream_name":"stdout","time":135.064960168,"data":"   por seed: 42:+0.0023  1:+0.0024  2:+0.0021  3:+0.0057  4:+0.0003\n"}
+,{"stream_name":"stdout","time":146.950472313,"data":"CV KFold(5) del modelo de la submission: 0.4601 (EXP-033: 0.4623)\n"}
+,{"stream_name":"stdout","time":146.962709002,"data":"{0: 109, 1: 818, 2: 1070, 3: 863, 4: 1112}\n"}
+,{"stream_name":"stderr","time":150.678685873,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":150.678725763,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":151.077714286,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":151.077746261,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":152.205518856,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":153.886786652,"data":"[NbConvertApp] Writing 345141 bytes to __results__.html\n"}
+]

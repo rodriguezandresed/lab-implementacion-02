@@ -1,0 +1,14 @@
+QWK medio por seed (folds agrupados por RescuerID)
+            033     040
+seed_42  0.4392  0.4454
+seed_1   0.4369  0.4444
+seed_2   0.4281  0.4365
+seed_3   0.4320  0.4417
+seed_4   0.4381  0.4407
+promedio 033 0.4349  040 0.4418
+
+040 vs 033: delta +0.0069 (por seed +0.0026 a +0.0097), mejora en 5/5 seeds y 19/25 folds -> gana la variante
+   por seed: 42:+0.0062  1:+0.0076  2:+0.0084  3:+0.0097  4:+0.0026
+CV KFold(5) del modelo de la submission: 0.4683 (EXP-033: 0.4623)
+submit: EXP-040 CLIP-L14 promedio de fotos sobre EXP-033 | 
+Kaggle: private 0.44183 (EXP-033: 0.42944, mejor EXP-032: 0.44273)

@@ -1,0 +1,18 @@
+{
+ "id": "rodriguezandresed/examen-lab-ii-preprocesado-texto-trad",
+ "title": "examen Lab II - preprocesado texto trad",
+ "code_file": "examen-lab-ii-preprocesado-texto-trad.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": true,
+ "docker_image_pinning_type": "latest",
+ "dataset_sources": [],
+ "kernel_sources": [
+  "rodriguezandresed/examen-lab-ii-preprocesado-texto"
+ ],
+ "competition_sources": [
+  "petfinder-adoption-prediction"
+ ]
+}
