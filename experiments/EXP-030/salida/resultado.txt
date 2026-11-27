@@ -1,0 +1,14 @@
+EXP-030: img_feat de clip-l14_first (baseline EXP-026 con effb0_first)
+folds agrupados por RescuerID
+        baseline     exp   delta
+fold_0    0.4232  0.4405  0.0173
+fold_1    0.4183  0.4211  0.0028
+fold_2    0.4456  0.4674  0.0218
+fold_3    0.4461  0.4448 -0.0013
+fold_4    0.3892  0.4013  0.0121
+media baseline 0.4245 desvio 0.0234
+media exp      0.4350 desvio 0.0250
+delta media    +0.0105
+folds que mejoran: 4 de 5
+CV KFold(5) del modelo de la submission: 0.4779 (EXP-026: 0.4693)
+Kaggle: private 0.42405 (EXP-026: 0.42045) | /code/ucatalano/lab2-exp-030?scriptVersionId=374574870

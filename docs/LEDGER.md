@@ -45,6 +45,17 @@ Baseline EXP-025, folds agrupados por `RescuerID` (0.4168), KFold 0.4613, privat
 - [x] CLIP: `experiments/EXP-027/EXP-027.md`. Agrupado 0.4166 (delta -0.0003, 2 de 5): descartado. KFold 0.4651. Private 0.40572.
 - [x] Detección: `experiments/EXP-028/EXP-028.md`. Agrupado 0.4139 (delta -0.0029, 0 de 5): descartado. KFold 0.4598. Private 0.39872.
 - [x] Zero-shot: `experiments/EXP-029/EXP-029.md`. Agrupado 0.4177 (delta +0.0009, 3 de 5): descartado. KFold 0.4626. Private 0.40159.
+### Embeddings de imagen más fuertes (2026-11-26, `orquestador/`)
+Baseline EXP-026 re-medido con los inputs recalculados en `ucatalano`: agrupado 0.4245 (registro original 0.4256).
+- [x] CLIP ViT-L/14 foto 1 en lugar de EfficientNetB0: `experiments/EXP-030/EXP-030.md`. Agrupado 0.4350 (delta +0.0105, 4 de 5; fold 3 -0.0013; desvío 0.0234 → 0.0250). KFold 0.4779. Private **0.42405** (mejor, +0.0036 sobre EXP-026): **aceptado**.
+- [x] DINOv2 ViT-S/14 foto 1 en lugar de EfficientNetB0: `experiments/EXP-031/EXP-031.md`. Agrupado 0.4367 (delta +0.0122, 5 de 5; desvío 0.0234 → 0.0199). KFold 0.4804. Private **0.43608** (mejor, +0.0156 sobre EXP-026, +0.0120 sobre EXP-030): **aceptado**. Preprocesado en GPU T4, 4,5 min.
+- [x] DINOv2-S promedio de todas las fotos sobre EXP-031: `experiments/EXP-032/EXP-032.md`. Agrupado 0.4391 contra 0.4367 (delta +0.0024, 2 de 5; casi todo el delta es el fold 4, +0.0155; desvío 0.0199 → 0.0147). Por la regla: **descartado**. Private **0.44273** (+0.0067 sobre EXP-031, el mejor). Otra vez el CV agrupado y el leaderboard no coinciden: falta medir con varias seeds de folds para decidir.
+- [x] Sin `RescuerID` como feature, sobre EXP-031: `experiments/EXP-033/EXP-033.md`. Agrupado 0.4392 contra 0.4367 (delta +0.0025, 3 de 5): no empeora, **aceptado** por el criterio de higiene del spec. El CV KFold del modelo enviado cae de 0.4804 a 0.4623: confirma que memorizaba rescatistas. Private 0.42944 (−0.0066 contra EXP-031): falta saber si es ruido o si test comparte rescatistas con train (no verificado).
+- [x] Emociones multilingües (mDeBERTa-v3 zero-shot, `lab2-prep-emo-mdeberta`, 7 min en T4) sobre EXP-033: `experiments/EXP-034/EXP-034.md`. Agrupado 0.4364 contra 0.4392 (delta −0.0028, 2 de 5, sube el desvío): **descartado**. Private 0.42962 (igual que EXP-033). Las emociones salen razonables (revisadas en el log), pero no aportan más que las de la cátedra.
+- [x] `txt_score` de e5 (ridge dentro del fold, como EXP-022) sobre EXP-033: `experiments/EXP-035/EXP-035.md`. Agrupado 0.4420 contra 0.4392 (delta +0.0028, 3 de 5; desvío igual). Por la regla: **descartado**. Private 0.43393 (+0.0045 sobre EXP-033). Mismo patrón que EXP-032: CV casi plano y leaderboard mejor; falta medir con varias particiones.
+- [ ] Siguiente base: EXP-033 (vigente por regla). Pendiente: desempatar EXP-032 con repeticiones de la partición; probar DINOv2-B.
+- [ ] CLIP promedio de todas las fotos (`--agg mean`, ya calculado en `lab2-prep-clip-l14`).
+
 - [ ] Siguiente base: EXP-026. Pendientes sobre ella: promedio de seeds, re-tunear hiperparámetros con las columnas nuevas, selección genética sobre todas las columnas.
 
 ### Variantes de elecciones propias

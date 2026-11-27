@@ -26,11 +26,32 @@ Inputs (en `experiments/EXP-026/kernel-metadata.json`, los mismos que EXP-019):
 
 Para correrlo en Kaggle: `python experiments/correr.py EXP-026` (necesita `~/.kaggle/kaggle.json`). Después, `kaggle competitions submit -c petfinder-adoption-prediction -f submission.csv -k rodriguezandresed/exp-026-rescuer-count-sobre-025 -v <version> -m "..."`.
 
+## Imagen y texto con el orquestador (EXP-030 a EXP-035)
+
+`orquestador/orquestador.py` corre todo en Kaggle desde la PC: preprocesa (un kernel por modelo, GPU T4), corre el modelo con folds agrupados contra el baseline en la misma sesión, baja el kappa, anota `experiments/log.csv`, hace el submit y espera el private. Ver `orquestador/README.md`. Los inputs se recalculan en la cuenta propia (los kernels de `rodriguezandresed` son privados); el baseline EXP-026 re-medido da 0.4245 agrupado (original 0.4256).
+
+| Exp | Cambio | Agrupado (delta) | Private | Decisión |
+|---|---|---|---|---|
+| EXP-030 | CLIP ViT-L/14 foto 1 en lugar de EfficientNetB0 | 0.4350 (+0.0105, 4/5) | 0.42405 | aceptado |
+| EXP-031 | DINOv2 ViT-S/14 foto 1 en lugar de EfficientNetB0 | 0.4367 (+0.0122, 5/5) | 0.43608 | aceptado |
+| EXP-032 | EXP-031 con el promedio de todas las fotos | 0.4391 (+0.0024, 2/5) | **0.44273** | descartado por CV |
+| EXP-033 | EXP-031 sin `RescuerID` como feature | 0.4392 (+0.0025, 3/5) | 0.42944 | aceptado (higiene; KFold 0.4804 → 0.4623) |
+| EXP-034 | EXP-033 con emociones multilingües (mDeBERTa zero-shot) | 0.4364 (−0.0028, 2/5) | 0.42962 | descartado |
+| EXP-035 | EXP-033 + `txt_score` (ridge sobre e5 dentro del fold) | 0.4420 (+0.0028, 3/5) | 0.43393 | descartado por CV |
+
+Base vigente por la regla: EXP-033. EXP-032 y EXP-035 mejoran el private con CV casi plano: falta desempatarlos con varias particiones agrupadas.
+
 ## Resultados (private score)
 
 | Notebook | Qué es | Private |
 |---|---|---|
-| **EXP-026** | EXP-025 + `rescuer_count` | **0.42045** |
+| **EXP-032** | DINOv2-S, promedio de todas las fotos (orquestador) | **0.44273** |
+| EXP-031 | DINOv2-S foto 1 en lugar de EfficientNetB0 | 0.43608 |
+| EXP-035 | EXP-033 + `txt_score` e5 | 0.43393 |
+| EXP-034 | EXP-033 + emociones mDeBERTa | 0.42962 |
+| EXP-033 | EXP-031 sin `RescuerID` | 0.42944 |
+| EXP-030 | CLIP ViT-L/14 foto 1 | 0.42405 |
+| EXP-026 | EXP-025 + `rescuer_count` | 0.42045 |
 | EXP-027 | EXP-025 + CLIP | 0.40572 |
 | EXP-025 | EXP-019 con los hiperparámetros del grid search, sin early stopping | 0.40393 |
 | EXP-019 | EXP-017 + estadísticas simples de texto y foto | 0.40321 |

@@ -1,0 +1,30 @@
+00:05:17 MCP conectado como ucatalano
+00:05:17 lab2-prep-stats ya esta COMPLETE: se reusa
+00:05:18 lab2-prep-dinov2-s ya esta COMPLETE: se reusa
+00:05:24 lab2-prep-txt-e5 -> Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/ucatalano/lab2-prep-txt-e5
+00:05:54 corriendo: lab2-prep-txt-e5=RUNNING
+00:06:25 corriendo: lab2-prep-txt-e5=RUNNING
+00:06:56 corriendo: lab2-prep-txt-e5=RUNNING
+00:07:26 lab2-prep-txt-e5 COMPLETE
+00:07:31 lab2-exp-035 -> Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/ucatalano/lab2-exp-035
+00:08:02 corriendo: lab2-exp-035=RUNNING
+00:08:32 corriendo: lab2-exp-035=RUNNING
+00:09:02 lab2-exp-035 COMPLETE
+EXP-035: variante {'img': 'dinov2-s_first', 'emo': 'catedra', 'drop': ['RescuerID'], 'txt_score': 'e5'} | baseline {'img': 'dinov2-s_first', 'emo': 'catedra', 'drop': ['RescuerID'], 'txt_score': ''}
+folds agrupados por RescuerID
+        baseline     exp   delta
+fold_0    0.4403  0.4458  0.0055
+fold_1    0.4307  0.4432  0.0126
+fold_2    0.4557  0.4580  0.0023
+fold_3    0.4595  0.4547 -0.0048
+fold_4    0.4100  0.4083 -0.0017
+media baseline 0.4392 desvio 0.0201
+media exp      0.4420 desvio 0.0198
+delta media    +0.0028
+folds que mejoran: 3 de 5
+CV KFold(5) del modelo de la submission: 0.4659 (EXP-026: 0.4693)
+
+00:09:05 log.csv: descartar (delta +0.0028, mejora en 3/5)
+00:09:05 submit lab2-exp-035 version 1
+00:09:07 submit 
+00:09:37 Kaggle: private 0.43393 (EXP-026: 0.42045) | /code/ucatalano/lab2-exp-035?scriptVersionId=374643927

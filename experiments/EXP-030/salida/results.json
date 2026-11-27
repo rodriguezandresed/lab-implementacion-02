@@ -1,0 +1,57 @@
+{
+ "exp": "EXP-030",
+ "config": {
+  "exp": "EXP-030",
+  "img_base": "effb0_first",
+  "img_exp": "clip-l14_first",
+  "n_svd": 20
+ },
+ "cv": "StratifiedGroupKFold(5, shuffle=True, random_state=42) groups=RescuerID",
+ "img_dims": {
+  "base": 1280,
+  "exp": 768
+ },
+ "sin_img": {
+  "train_base": 341,
+  "test_base": 114,
+  "train_exp": 341,
+  "test_exp": 114
+ },
+ "qwk_folds_base": [
+  0.4232321522323772,
+  0.41830012885718526,
+  0.4455794510274158,
+  0.4461208533131108,
+  0.3891833592206303
+ ],
+ "qwk_folds_exp": [
+  0.44054429932176875,
+  0.42111812711500396,
+  0.46742103014406367,
+  0.44478039071222286,
+  0.4012883263387311
+ ],
+ "delta_folds": [
+  0.01731214708939155,
+  0.002817998257818699,
+  0.021841579116647858,
+  -0.0013404626008879372,
+  0.012104967118100829
+ ],
+ "qwk_mean_base": 0.4244831889301438,
+ "qwk_std_base": 0.02344735644285054,
+ "qwk_mean_exp": 0.4350304347263581,
+ "qwk_std_exp": 0.02503346359141909,
+ "delta_mean": 0.010547245796214199,
+ "folds_mejoran": 4,
+ "qwk_kfold_submission": 0.4778657310118932,
+ "params": {
+  "n_estimators": 300,
+  "learning_rate": 0.03,
+  "num_leaves": 15,
+  "colsample_bytree": 0.6,
+  "random_state": 42,
+  "verbose": -1
+ },
+ "n_svd": 20
+}
