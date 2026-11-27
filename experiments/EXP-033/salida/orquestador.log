@@ -1,0 +1,25 @@
+23:38:25 MCP conectado como ucatalano
+23:38:25 lab2-prep-stats ya esta COMPLETE: se reusa
+23:38:26 lab2-prep-dinov2-s ya esta COMPLETE: se reusa
+23:38:36 lab2-exp-033 -> Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/ucatalano/lab2-exp-033
+23:39:06 corriendo: lab2-exp-033=RUNNING
+23:39:37 lab2-exp-033 COMPLETE
+EXP-033: variante {'img': 'dinov2-s_first', 'emo': 'catedra', 'drop': ['RescuerID']} | baseline {'img': 'dinov2-s_first', 'emo': 'catedra', 'drop': []}
+folds agrupados por RescuerID
+        baseline     exp   delta
+fold_0    0.4358  0.4403  0.0046
+fold_1    0.4317  0.4307 -0.0011
+fold_2    0.4593  0.4557 -0.0036
+fold_3    0.4496  0.4595  0.0099
+fold_4    0.4071  0.4100  0.0029
+media baseline 0.4367 desvio 0.0199
+media exp      0.4392 desvio 0.0201
+delta media    +0.0025
+folds que mejoran: 3 de 5
+CV KFold(5) del modelo de la submission: 0.4623 (EXP-026: 0.4693)
+
+23:39:39 log.csv: descartar (delta +0.0025, mejora en 3/5)
+23:39:40 submit lab2-exp-033 version 1
+23:39:42 submit 
+23:40:12 Kaggle: private 0.42944 (EXP-026: 0.42045) | /code/ucatalano/lab2-exp-033?scriptVersionId=374636707
+FIN

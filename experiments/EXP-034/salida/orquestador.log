@@ -1,0 +1,42 @@
+23:40:34 MCP conectado como ucatalano
+23:40:34 lab2-prep-stats ya esta COMPLETE: se reusa
+23:40:34 lab2-prep-dinov2-s ya esta COMPLETE: se reusa
+23:40:42 lab2-prep-emo-mdeberta -> Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/ucatalano/lab2-prep-emo-mdeberta
+23:41:13 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:41:44 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:42:14 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:42:45 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:43:16 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:43:46 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:44:17 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:44:47 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:45:18 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:45:49 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:46:19 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:46:50 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:47:20 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:47:51 corriendo: lab2-prep-emo-mdeberta=RUNNING
+23:48:21 lab2-prep-emo-mdeberta COMPLETE
+23:48:26 lab2-exp-034 -> Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/ucatalano/lab2-exp-034
+23:48:57 corriendo: lab2-exp-034=RUNNING
+23:49:28 corriendo: lab2-exp-034=RUNNING
+23:49:58 lab2-exp-034 COMPLETE
+EXP-034: variante {'img': 'dinov2-s_first', 'emo': 'mdeberta', 'drop': ['RescuerID']} | baseline {'img': 'dinov2-s_first', 'emo': 'catedra', 'drop': ['RescuerID']}
+folds agrupados por RescuerID
+        baseline     exp   delta
+fold_0    0.4403  0.4312 -0.0091
+fold_1    0.4307  0.4224 -0.0082
+fold_2    0.4557  0.4565  0.0008
+fold_3    0.4595  0.4635  0.0040
+fold_4    0.4100  0.4086 -0.0015
+media baseline 0.4392 desvio 0.0201
+media exp      0.4364 desvio 0.0231
+delta media    -0.0028
+folds que mejoran: 2 de 5
+CV KFold(5) del modelo de la submission: 0.4613 (EXP-026: 0.4693)
+
+23:50:00 log.csv: descartar (delta -0.0028, mejora en 2/5)
+23:50:01 submit lab2-exp-034 version 1
+23:50:02 submit 
+23:50:32 Kaggle: private 0.42962 (EXP-026: 0.42045) | /code/ucatalano/lab2-exp-034?scriptVersionId=374639116
+FIN

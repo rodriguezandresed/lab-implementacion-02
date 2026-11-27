@@ -1,0 +1,14 @@
+EXP-032: img_feat de dinov2-s_mean (baseline EXP-026 con dinov2-s_first)
+folds agrupados por RescuerID
+        baseline     exp   delta
+fold_0    0.4358  0.4362  0.0005
+fold_1    0.4317  0.4294 -0.0024
+fold_2    0.4593  0.4593  0.0000
+fold_3    0.4496  0.4480 -0.0016
+fold_4    0.4071  0.4226  0.0155
+media baseline 0.4367 desvio 0.0199
+media exp      0.4391 desvio 0.0147
+delta media    +0.0024
+folds que mejoran: 2 de 5
+CV KFold(5) del modelo de la submission: 0.4804 (EXP-026: 0.4693)
+Kaggle: private 0.44273 (EXP-026: 0.42045) | /code/ucatalano/lab2-exp-032?scriptVersionId=374584107

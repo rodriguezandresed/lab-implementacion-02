@@ -1,0 +1,14 @@
+EXP-035: variante {'img': 'dinov2-s_first', 'emo': 'catedra', 'drop': ['RescuerID'], 'txt_score': 'e5'} | baseline {'img': 'dinov2-s_first', 'emo': 'catedra', 'drop': ['RescuerID'], 'txt_score': ''}
+folds agrupados por RescuerID
+        baseline     exp   delta
+fold_0    0.4403  0.4458  0.0055
+fold_1    0.4307  0.4432  0.0126
+fold_2    0.4557  0.4580  0.0023
+fold_3    0.4595  0.4547 -0.0048
+fold_4    0.4100  0.4083 -0.0017
+media baseline 0.4392 desvio 0.0201
+media exp      0.4420 desvio 0.0198
+delta media    +0.0028
+folds que mejoran: 3 de 5
+CV KFold(5) del modelo de la submission: 0.4659 (EXP-026: 0.4693)
+Kaggle: private 0.43393 (EXP-026: 0.42045) | /code/ucatalano/lab2-exp-035?scriptVersionId=374643927
