@@ -69,7 +69,17 @@ Baseline EXP-026 re-medido con los inputs recalculados en `ucatalano`: agrupado 
 - [x] EXP-042 hiperparametros re-tuneados: `experiments/EXP-042/EXP-042.md`. 5 particiones: delta +0.0034 (por seed +0.0010 a +0.0059; 5 de 5 seeds, 17 de 25 folds): **empate**. KFold 0.4690. Private 0.43159. sin la seed 42 (con la que se eligio): +0.0032; params {"n_estimators": 300, "learning_rate": 0.02, "num_leaves": 31, "min_child_samples": 50}.
 - [x] EXP-043 seleccion genetica de columnas: `experiments/EXP-043/EXP-043.md`. 5 particiones: delta +0.0026 (por seed -0.0013 a +0.0041; 4 de 5 seeds, 16 de 25 folds): **empate**. KFold 0.4597. Private 0.42818. sin la seed 42 (con la que se eligio): +0.0022; saca 9 de 41: Type, Color2, FurLength, anger, txt_palabras, txt_frac_chino, txt_frac_malayo, txt_exclamaciones, img_ancho.
 - Lectura: todo lo que se probó es positivo o neutro en casi todas las particiones, pero solo CLIP promediado (EXP-040) pasa el umbral. Los cambios de imagen dan los mayores privates (040 0.44183, 038 0.44165, 032 0.44273).
-- [ ] Siguiente base: **EXP-040** (CLIP-L/14 promedio de fotos, aceptado). Probar sobre ella, uno por vez: `txt_score` e5 (la mitad de texto de EXP-038), promedio de 5 seeds (EXP-041), params de EXP-042.
+- [x] Siguiente base: **EXP-040** (CLIP-L/14 promedio de fotos, aceptado). Se probaron sobre ella `txt_score`, 5 seeds, params de EXP-042 y todo junto (abajo).
+
+### Sobre EXP-040 con 5 particiones (2026-11-27, `experiments/cola.py`)
+- [x] EXP-044 txt_score e5: `experiments/EXP-044/EXP-044.md`. 5 particiones: delta -0.0001 (por seed -0.0025 a +0.0022; mejora en 3 de 5 seeds, 14 de 25 folds): **empate**. KFold 0.4708. Private 0.44237.
+- [x] EXP-045 promedio de 5 seeds de LightGBM: `experiments/EXP-045/EXP-045.md`. 5 particiones: delta +0.0006 (por seed -0.0019 a +0.0037; mejora en 3 de 5 seeds, 14 de 25 folds): **empate**. KFold 0.4714. Private 0.43932.
+- [x] EXP-046 hiperparametros de EXP-042: `experiments/EXP-046/EXP-046.md`. 5 particiones: delta -0.0006 (por seed -0.0030 a +0.0026; mejora en 2 de 5 seeds, 9 de 25 folds): **empate**. KFold 0.4765. Private 0.44039.
+- [x] EXP-047 txt_score + 5 seeds + params de EXP-042 (todo junto): `experiments/EXP-047/EXP-047.md`. 5 particiones: delta +0.0025 (por seed +0.0003 a +0.0057; mejora en 5 de 5 seeds, 13 de 25 folds): **empate**. KFold 0.4791. Private 0.43950.
+- [x] EXP-048 sin texto (ablacion: sin 7 emociones ni 8 txt_stats): `experiments/EXP-048/EXP-048.md`. 5 particiones: delta -0.0036 (por seed -0.0070 a +0.0009; mejora en 1 de 5 seeds, 6 de 25 folds): **empate en el borde**. KFold 0.4653. Private 0.42548.
+- Lectura: sobre EXP-033 los tres pasos mejoraban en 5 de 5 seeds; sobre la base CLIP no se distinguen del ruido (3/5, 3/5, 2/5). Juntos (047) mejoran en 5 de 5 seeds pero +0.0025, y el private baja (0.43950). CLIP promediado parece cubrir lo que aportaban.
+- Sacar el texto (048) empeora en 4 de 5 seeds (−0.0036, en el borde del umbral) y es lo que más baja el private (−0.016): el procesamiento de texto se gana su lugar, aunque cambiar el modelo de emociones (034, 036) no aporte.
+- [ ] Siguiente base: EXP-040. Mejor private: EXP-032 (0.44273); EXP-044 0.44237, EXP-040 0.44183 (diferencias de ruido).
 
 ### Variantes de elecciones propias
 - [x] Vision extendido (crop hints, cantidad de colores) sobre EXP-006: `experiments/EXP-011/EXP-011.md`. Descartado: delta +0.0070 contra EXP-006, sube el desvío.

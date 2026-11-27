@@ -1,4 +1,4 @@
-"""Cola de experimentos EXP-038 a EXP-043 sobre EXP-033, medidos como EXP-037 (5 particiones agrupadas) + submission.
+"""Cola de experimentos (EXP-038 a 043 sobre EXP-033, EXP-044 a 047 sobre EXP-040), medidos como EXP-037 (5 particiones agrupadas) + submission.
 
 Uso (desde la raiz del lab):
     python experiments/cola.py                    # corre toda la cola: preps, modelos, submits, privates
@@ -132,7 +132,7 @@ VAR = CONFIG["variante"]
 tr, te = datos[VAR]
 pred_k, test_preds, _ = correr(tr, te, folds, SPECS[VAR])
 kf = float(np.mean(qwk_por_fold(pred_k, folds)))
-linea = f"CV KFold(5) del modelo de la submission: {kf:.4f} (EXP-033: 0.4623)"
+linea = f"CV KFold(5) del modelo de la submission: {kf:.4f} ({CONFIG.get('ref_kfold', 'EXP-033: 0.4623')})"
 print(linea, flush=True)
 open(f"{OUT}/resultado.txt", "a").write(linea + "\\n")
 r = json.load(open(f"{OUT}/results.json")); r["qwk_kfold_submission"] = kf; r["specs_finales"] = SPECS
@@ -152,11 +152,39 @@ EXPS = {
 }
 
 
+# EXP-044 a 047: sobre la base nueva EXP-040 (CLIP-L/14 promedio de fotos)
+BASE40 = v(img="clip-l14_mean")
+PARAMS42 = {"n_estimators": 300, "learning_rate": 0.02, "num_leaves": 31, "colsample_bytree": 0.6,
+            "random_state": 42, "verbose": -1, "min_child_samples": 50}  # los que eligio EXP-042
+def v40(**k):
+    d = json.loads(json.dumps(BASE40)); d.update(k); return d
+P40 = ["stats", "clip-l14"]
+EXPS.update({
+    "EXP-044": dict(desc="txt_score e5", var=v40(txt_score="e5"), preps=P40 + ["txt-e5"], extra="", base="040"),
+    "EXP-045": dict(desc="promedio de 5 seeds de LightGBM", var=v40(lgbm_seeds=5), preps=P40, extra="", base="040"),
+    "EXP-046": dict(desc="hiperparametros de EXP-042", var=v40(params=PARAMS42), preps=P40, extra="", base="040"),
+    "EXP-047": dict(desc="txt_score + 5 seeds + params de EXP-042 (todo junto)",
+                    var=v40(txt_score="e5", lgbm_seeds=5, params=PARAMS42), preps=P40 + ["txt-e5"], extra="", base="040"),
+})
+# EXP-048: ablacion, EXP-040 sin el procesamiento de texto (7 emociones de la catedra + 8 txt_stats)
+EMO7 = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
+TXT8 = ["txt_largo", "txt_palabras", "txt_frac_chino", "txt_frac_malayo", "txt_frac_mayus", "txt_exclamaciones", "txt_telefono", "txt_precio"]
+EXPS["EXP-048"] = dict(desc="sin texto (ablacion: sin las 7 emociones ni las 8 txt_stats)",
+                       var=v40(drop=["RescuerID"] + EMO7 + TXT8), preps=P40, extra="", base="040")
+BASES = {"033": {"spec": BASE, "kfold": "EXP-033: 0.4623", "private": "0.42944"},
+         "040": {"spec": BASE40, "kfold": "EXP-040: 0.4683", "private": "0.44183"}}
+def base_de(exp):
+    bk = EXPS[exp].get("base", "033")
+    return bk, BASES[bk]["spec"]
+
+
 def armar(exp):
     e, n = EXPS[exp], exp[-3:]
     src = open(os.path.join(e37.K, "modelo.py"), encoding="utf-8").read()
     corte = src.index("# ---------------------------------------------------------------- corrida")
-    config = {"exp": exp, "n_svd": 20, "specs": {"033": BASE, n: e["var"]}, "pares": [(n, "033")],
+    bk, bspec = base_de(exp)
+    config = {"exp": exp, "n_svd": 20, "specs": {bk: bspec, n: e["var"]}, "pares": [(n, bk)],
+              "ref_kfold": BASES[bk]["kfold"],
               "seeds": e37.SEEDS, "variante": n}
     codigo = f"CONFIG = {config!r}\n\n" + src[:corte] + ENVOLTURA + e["extra"] + e37.CORRIDA + SUBMISSION
     compile(codigo, f"exp-{n}.py", "exec")
@@ -264,17 +292,18 @@ def main():
                     continue
                 print(open(os.path.join(salida, "resultado.txt"), encoding="utf-8").read(), flush=True)
                 r = json.load(open(os.path.join(salida, "results.json")))
-                if r["pares"][f"{exp[-3:]}_vs_033"]["delta_media"] > 0.02:
+                if r["pares"][f"{exp[-3:]}_vs_{base_de(exp)[0]}"]["delta_media"] > 0.02:
                     print(exp, "delta > +0.02: regla de sospecha, NO se sube", flush=True)
                     continue
-                msg = f"{exp} {EXPS[exp]['desc']} sobre EXP-033"
+                msg = f"{exp} {EXPS[exp]['desc']} sobre EXP-{base_de(exp)[0]}"
                 submit(slug, versiones[exp], msg, salida)
                 enviados.append((exp, msg))
         time.sleep(30)
     # 3) privates
     pr = privates([m for _, m in enviados])
     for exp, msg in enviados:
-        linea = f"Kaggle: private {pr.get(msg, 'sin score todavia')} (EXP-033: 0.42944, mejor EXP-032: 0.44273)"
+        bk = base_de(exp)[0] if exp in EXPS else "033"
+        linea = f"Kaggle: private {pr.get(msg, 'sin score todavia')} (EXP-{bk}: {BASES[bk]['private']}, mejor EXP-032: 0.44273)"
         print(exp, linea, flush=True)
         open(os.path.join(AQUI, exp, "salida", "resultado.txt"), "a", encoding="utf-8").write(linea + "\n")
     print("cola terminada", flush=True)

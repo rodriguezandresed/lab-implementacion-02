@@ -1,0 +1,18 @@
+lab2-exp-048 -> version 1
+EXP-048 complete
+QWK medio por seed (folds agrupados por RescuerID)
+            040     048
+seed_42  0.4454  0.4417
+seed_1   0.4444  0.4423
+seed_2   0.4365  0.4374
+seed_3   0.4417  0.4357
+seed_4   0.4407  0.4336
+promedio 040 0.4418  048 0.4381
+
+048 vs 040: delta -0.0036 (por seed -0.0070 a +0.0009), mejora en 1/5 seeds y 6/25 folds -> pierde la variante
+   por seed: 42:-0.0038  1:-0.0022  2:+0.0009  3:-0.0060  4:-0.0070
+CV KFold(5) del modelo de la submission: 0.4653 (EXP-040: 0.4683)
+
+submit lab2-exp-048 v 1 -> 
+EXP-048 Kaggle: private 0.42548 (EXP-040: 0.44183, mejor EXP-032: 0.44273)
+cola terminada

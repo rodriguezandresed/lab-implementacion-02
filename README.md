@@ -23,6 +23,16 @@ Con una sola partición agrupada, el promedio de 5 folds se mueve unos ±0.004 s
 | EXP-042 | hiperparámetros re-tuneados (grid de 36) | +0.0034 | 5/5 | 0.43159 | empate |
 | EXP-043 | selección genética (saca 9 de 41 columnas) | +0.0026 | 4/5 | 0.42818 | empate |
 
+### Sobre la base nueva EXP-040
+
+| Exp | Cambio (sobre EXP-040) | Delta 5 particiones | Seeds que mejoran | Private | Decisión |
+|---|---|---|---|---|---|
+| EXP-044 | + `txt_score` e5 | −0.0001 | 3/5 | 0.44237 | empate |
+| EXP-045 | + promedio de 5 seeds de LightGBM | +0.0006 | 3/5 | 0.43932 | empate |
+| EXP-046 | + hiperparámetros de EXP-042 | −0.0006 | 2/5 | 0.44039 | empate |
+| EXP-047 | + los tres juntos | +0.0025 | 5/5 | 0.43950 | empate |
+| EXP-048 | − texto (sin las 7 emociones ni las 8 `txt_stats`) | −0.0036 | 1/5 (empeora en 4) | 0.42548 | el texto se queda |
+
 Para correr la cola: `python experiments/cola.py [EXP-###...]` (necesita `~/.kaggle/kaggle.json`).
 
 ## Cómo se llegó a EXP-026
@@ -69,7 +79,12 @@ Base por la regla después de esta tanda: EXP-033. EXP-032 y EXP-035 se desempat
 | Notebook | Qué es | Private |
 |---|---|---|
 | **EXP-032** | DINOv2-S, promedio de todas las fotos (orquestador) | **0.44273** |
+| EXP-044 | EXP-040 + `txt_score` | 0.44237 |
 | EXP-040 | CLIP-L/14 promedio de fotos sobre EXP-033 (base vigente) | 0.44183 |
+| EXP-046 | EXP-040 con params de EXP-042 | 0.44039 |
+| EXP-047 | EXP-040 + `txt_score` + 5 seeds + params | 0.43950 |
+| EXP-045 | EXP-040 con 5 seeds de LightGBM | 0.43932 |
+| EXP-048 | EXP-040 sin texto | 0.42548 |
 | EXP-038 | EXP-033 + foto promedio + `txt_score` | 0.44165 |
 | EXP-039 | DINOv2-B foto 1 sobre EXP-033 | 0.43231 |
 | EXP-036 | EXP-033 + emociones traducidas | 0.43213 |
