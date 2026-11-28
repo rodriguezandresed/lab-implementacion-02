@@ -81,6 +81,20 @@ Baseline EXP-026 re-medido con los inputs recalculados en `ucatalano`: agrupado 
 - Sacar el texto (048) empeora en 4 de 5 seeds (−0.0036, en el borde del umbral) y es lo que más baja el private (−0.016): el procesamiento de texto se gana su lugar, aunque cambiar el modelo de emociones (034, 036) no aporte.
 - [ ] Siguiente base: EXP-040. Mejor private: EXP-032 (0.44273); EXP-044 0.44237, EXP-040 0.44183 (diferencias de ruido).
 
+### Pipeline SOTA multi-modal y Stacking L2 (2026-11-27 / 2026-11-28, `orquestador/kernels/`)
+Todos validados estrictamente en `StratifiedGroupKFold(5)` por `RescuerID` (seed 42), sin leakage (SVD, TF-IDF, stats por categoría, probes Cholesky anidados y cortes de cuantiles ajustados solo en `X_train` de cada fold).
+
+- [x] `EXP-049` (`lab2-exp-036-fast`): `DINOv2-L` + `BGE-M3` (descripción + perfil) + `E5-L` + TF-IDF multi-vista + JSON Vision/Sentiment completos + Gold Tabular FE (3 GBDTs). CV agrupado **0.4748 ± 0.0219** (RMSE `1.0190`), Private **0.47040**.
+- [x] `EXP-050` (`lab2-exp-036-chol`): reemplazo de `RidgeCV`/`LogisticRegression` por ecuaciones normales Cholesky multi-target (~150× más rápido) + 6 GBDTs (`lgbm_cls` EV primero con `0.4792`). CV agrupado **0.4853 ± 0.0229** (RMSE `1.0157`), Private **0.47776**.
+- [x] `EXP-051` (`lab2-exp-037`): + `SigLIP-SO400M-384` + 12 prompts visuales zero-shot + alineación imagen-texto + 2 seeds. CV agrupado **0.4964 ± 0.0214** (RMSE `1.0071`), Private **0.48549**.
+- [x] `EXP-052` (`lab2-exp-038`): + `lgbm_ordinal` (4 clasificadores binarios acumulativos $\sum_{k=1}^4 P(y \ge k)$, solo `0.4931` / RMSE `1.0079`) + `catboost_cls` + `xgb_cls`. CV agrupado **0.4967 ± 0.0248** (RMSE `1.0064`).
+- [x] `EXP-053` (`lab2-exp-039`) y `EXP-054` (`lab2-exp-040-knn`): Vision Trinity + `DeBERTa-v3` en L1 (y LORO kNN en 054). CV `0.4937 ± 0.0198` y `0.4950 ± 0.0222` (RMSE `1.0096` / `1.0097`). Hallazgo: inyectar OOF débiles/ruidosos (`DeBERTa-v3`, kNN) directo en árboles L1 diluye splits; reservar diversidad neuronal para el stacker L2.
+- [x] `EXP-055` (`lab2-exp-041-giant`): Vision Quartet limpio (`DINOv2-Giant 1.1B` + `SigLIP-SO400M` + `ConvNeXt-L` + `DINOv2-L`) sin kNN/DeBERTa en L1, 7 GBDTs × 2 seeds. CV agrupado **0.4971 ± 0.0235** (RMSE `1.0064`); mejores modelos individuales: `lgbm_ordinal` (`0.4959`) y `xgb_ordinal` (`0.4957`).
+- [x] Modelos neuronales/transformers standalone (todos en el mismo `SGKF(5)` seed 42): `lab2-ft-mm-nn` (`0.4309`), `lab2-ft-mm-nn-giant` (`0.4500`), `lab2-ft-nn-v2` (`0.4711`), `lab2-ft-nn-v3` (`PetResNetV2` con `DINOv2-Giant`, **0.4736** / cabeza ordinal `0.4741`), `lab2-ft-deberta` (`0.3770`), `lab2-ft-vision-e2e` (`ConvNeXt-Small` + flip TTA, `0.3715`).
+- [x] `EXP-056` (`lab2-stack-v2`): Level-2 RankAvg sobre 37 modelos (8 kernels). CV **0.4974 ± 0.0199**, Private **0.48782**.
+- [x] `EXP-057` (`lab2-stack-final`): Level-2 NNLS sobre 50 modelos (10 kernels: ~82% GBDTs + 15.0% PyTorch NNs + 1.8% E2E ConvNeXt-S + 1.4% DeBERTa-v3). CV **0.4976 ± 0.0210** (`QWK_sh` `0.4991`), Private **0.49016** (+0.03678 sobre el #1 histórico `0.45338`).
+- [ ] Opcionales ya cacheados en Kaggle (`mmaceoaustral`) para una futura iteración si se retoma: embeddings `lab2-prep-siglip2` (`SigLIP2-SO400M`) y fine-tune E2E `lab2-ft-swin-e2e` (`Swin-Base`).
+
 ### Variantes de elecciones propias
 - [x] Vision extendido (crop hints, cantidad de colores) sobre EXP-006: `experiments/EXP-011/EXP-011.md`. Descartado: delta +0.0070 contra EXP-006, sube el desvío.
 - [x] Sentiment del documento: `experiments/EXP-012/EXP-012.md`. Descartado: delta -0.0093, mejora en 2 de 5 folds.

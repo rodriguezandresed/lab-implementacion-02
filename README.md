@@ -4,9 +4,26 @@ Predecir `AdoptionSpeed` (0 a 4) con QWK como métrica.
 
 ## Mejor modelo
 
-- **Mejor private score: EXP-032, 0.44273** (DINOv2-S, promedio de todas las fotos). Es la submission que cuenta para la nota.
-- **Base vigente por la regla: EXP-040, private 0.44183** (CLIP-L/14, promedio de todas las fotos, sobre EXP-033). Es el único cambio que pasó el criterio medido con 5 particiones agrupadas (delta +0.0069, mejora en 5 de 5). Los experimentos que siguen se construyen sobre ella.
-- EXP-032 y EXP-040 están a 0.001 en el private: una diferencia de ese tamaño es ruido (el private tiene 3.972 mascotas).
+- **Mejor private score: EXP-057 (`lab2-stack-final`), 0.49016** (late submission `59033622`, +0.03678 sobre el #1 histórico de la competencia `0.45338` y +0.04743 sobre `EXP-032` `0.44273`). CV agrupado `StratifiedGroupKFold(5)` por `RescuerID` (seed 42): **0.4976 ± 0.0210** (folds `[0.4995, 0.4953, 0.5248, 0.5024, 0.4662]`, `QWK_sh` 0.4991). Es un stacker Level-2 NNLS sin leakage (`orquestador/kernels/stack_final.py`) sobre 50 modelos de 10 kernels (~82% GBDTs multi-objetivo, 15.0% redes neuronales PyTorch, 1.8% `ConvNeXt-Small` E2E sobre fotos, 1.4% `DeBERTa-v3-base` E2E sobre texto).
+- **Base single-LGBM anterior: EXP-040, private 0.44183** (CLIP-L/14 promedio de todas las fotos, sobre EXP-033; EXP-032 `0.44273`).
+
+## Pipeline SOTA multi-modal y Stacking L2 (EXP-049 a EXP-057)
+
+Lanzados con `orquestador/lanzar.py` en Kaggle (`mmaceoaustral`), manteniendo estrictamente `StratifiedGroupKFold(5)` por `RescuerID` (seed 42) y ajuste de todos los transformadores, SVD, TF-IDF, estadísticas por grupo, probes Cholesky anidados (`GroupKFold(5)`) y cortes por cuantiles exclusivamente sobre `X_train` de cada fold. Las 5 subidas crecieron de forma monótona en CV y Private LB:
+
+| Exp (kernel Kaggle) | Qué cambia | CV agrupado (media ± std) | RMSE OOF | Private |
+|---|---|---|---|---|
+| EXP-049 (`lab2-exp-036-fast`) | `DINOv2-L` + `BGE-M3` (desc + perfil) + `E5-L` + TF-IDF multi-vista + JSON Vision/Sent + Gold FE (3 GBDT) | 0.4748 ± 0.0219 | 1.0190 | 0.47040 |
+| EXP-050 (`lab2-exp-036-chol`) | + Probes Cholesky multi-target + 6 GBDTs (`lgbm_cls` EV, CatBoost, LGBM, XGB) | 0.4853 ± 0.0229 | 1.0157 | 0.47776 |
+| EXP-051 (`lab2-exp-037`) | + `SigLIP-SO400M-384` + 12 prompts visuales + alineación img-texto + 2 seeds | 0.4964 ± 0.0214 | 1.0071 | 0.48549 |
+| EXP-052 (`lab2-exp-038`) | + `lgbm_ordinal` (4 binarios acumulativos, 0.4931 solo) + `catboost_cls` + `xgb_cls` | 0.4967 ± 0.0248 | 1.0064 | — (en L2) |
+| EXP-053 (`lab2-exp-039`) | Vision Trinity (`DINOv2-L` + `SigLIP` + `ConvNeXt-L`) + `DeBERTa-v3` en L1 (9 GBDTs) | 0.4937 ± 0.0198 | 1.0096 | — (en L2) |
+| EXP-054 (`lab2-exp-040-knn`) | Vision Trinity + `DeBERTa-v3` + LORO Cosine-kNN (6 GBDTs) | 0.4950 ± 0.0222 | 1.0097 | — (en L2) |
+| EXP-055 (`lab2-exp-041-giant`) | Vision Quartet limpio (`DINOv2-Giant` + `SigLIP` + `ConvNeXt-L` + `DINOv2-L`), 7 GBDTs × 2 seeds | 0.4971 ± 0.0235 | 1.0064 | — (en L2) |
+| EXP-056 (`lab2-stack-v2`) | Level-2 RankAvg sobre 37 modelos (8 kernels: GBDTs + NNs + DeBERTa + ConvNeXt E2E) | 0.4974 ± 0.0199 | — | 0.48782 |
+| **EXP-057 (`lab2-stack-final`)** | **Level-2 NNLS sobre 50 modelos (10 kernels, suma `EXP-055` + `PetResNetV2-v3`)** | **0.4976 ± 0.0210** | — | **0.49016** |
+
+Kernels nuevos en `orquestador/kernels/`: `prep_stats_v2.py`, `prep_vision.py`, `prep_text.py`, `sota_engine.py`, `ft_multimodal_nn.py`, `ft_nn_v2.py`, `ft_deberta.py`, `ft_vision_e2e.py` y `stack_final.py`.
 
 ## Cola sobre EXP-033 con 5 particiones (EXP-036 a EXP-043)
 
@@ -78,7 +95,13 @@ Base por la regla después de esta tanda: EXP-033. EXP-032 y EXP-035 se desempat
 
 | Notebook | Qué es | Private |
 |---|---|---|
-| **EXP-032** | DINOv2-S, promedio de todas las fotos (orquestador) | **0.44273** |
+| **EXP-057 (`lab2-stack-final`)** | Level-2 NNLS sobre 50 modelos (10 kernels: GBDTs + NNs + ConvNeXt E2E + DeBERTa) | **0.49016** |
+| EXP-056 (`lab2-stack-v2`) | Level-2 RankAvg sobre 37 modelos (8 kernels) | 0.48782 |
+| EXP-051 (`lab2-exp-037`) | `DINOv2-L` + `SigLIP-SO400M` (prompts + img-txt) + `BGE-M3` + `E5-L` + 6 GBDTs × 2 seeds | 0.48549 |
+| EXP-050 (`lab2-exp-036-chol`) | Cholesky probes + 6 GBDTs (`lgbm_cls` EV, CatBoost, LGBM, XGB) | 0.47776 |
+| EXP-049 (`lab2-exp-036-fast`) | `DINOv2-L` + `BGE-M3` + `E5-L` + TF-IDF multi-vista + Vision/Sent JSON + Gold FE | 0.47040 |
+| *Referencia #1 Kaggle* | *[kaggler-ja] Wodori (ganador histórico de la competencia)* | *0.45338* |
+| EXP-032 | DINOv2-S, promedio de todas las fotos (orquestador) | 0.44273 |
 | EXP-044 | EXP-040 + `txt_score` | 0.44237 |
 | EXP-040 | CLIP-L/14 promedio de fotos sobre EXP-033 (base vigente) | 0.44183 |
 | EXP-046 | EXP-040 con params de EXP-042 | 0.44039 |

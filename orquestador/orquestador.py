@@ -40,14 +40,18 @@ def buscar_mcp_json():
         if os.path.exists(p):
             return p
         if os.path.dirname(d) == d:
-            raise SystemExit("No encontre .mcp.json con el servidor 'kaggle' en ninguna carpeta de arriba.")
+            break
         d = os.path.dirname(d)
+    global_cfg = os.path.expanduser("~/.gemini/config/mcp_config.json")
+    if os.path.exists(global_cfg):
+        return global_cfg
+    raise SystemExit("No encontre .mcp.json ni ~/.gemini/config/mcp_config.json con el servidor 'kaggle'.")
 
 
 class Kaggle:
     def __init__(self):
         cfg = json.load(open(buscar_mcp_json(), encoding="utf-8"))["mcpServers"]["kaggle"]
-        self.url = cfg["url"]
+        self.url = cfg.get("url") or cfg.get("serverUrl")
         self.auth = cfg["headers"]["Authorization"]
         self.token = self.auth.split(" ", 1)[1]
         self.sid = None
@@ -89,11 +93,21 @@ class Kaggle:
             return txt
 
     def _usuario(self):
+        if os.environ.get("KAGGLE_USER"):
+            return os.environ["KAGGLE_USER"]
+        kj = os.path.expanduser("~/.kaggle/kaggle.json")
+        if os.path.exists(kj):
+            try:
+                u = json.load(open(kj, encoding="utf-8")).get("username")
+                if u:
+                    return u
+            except Exception:
+                pass
         try:
             p = self.tool("get_user_profile")
             return p.get("userName") or p.get("user_name") or p.get("displayName") or "?"
         except Exception:
-            return os.environ.get("KAGGLE_USER", "ucatalano")
+            return "ucatalano"
 
     def estado(self, slug):
         try:
